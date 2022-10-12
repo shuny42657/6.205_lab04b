@@ -19,6 +19,33 @@ module buffer (
 
   // Your code here!
 
+  xilinx_true_dual_port_read_first_1_clock_ram #(3,320,"HIGH_PERFORMANCE","") bram1();
+  xilinx_true_dual_port_read_first_1_clock_ram #(3,320,"HIGH_PERFORMANCE","") bram2();
+  xilinx_true_dual_port_read_first_1_clock_ram #(3,320,"HIGH_PERFORMANCE","") bram3();
+  xilinx_true_dual_port_read_first_1_clock_ram #(3,320,"HIGH_PERFORMANCE","") bram4();
+
+  logic [$clog2(240*320):0] addr_upper,addr_middle,addr_lower,addr_next; 
+  logic [15:0]bram1_out,bram2_out,bram3_out,bram4_out;
+
+  assign addr_upper = 
+  always_ff @(posedge clk_in)begin
+	  if(rst_in)begin
+
+	  end
+	  if(data_valid_in)begin
+		  line_buffer_out[0] <= bram1_out;
+		  line_buffer_out[1] <= bram2_out;
+		  line_buffer_out[2] <= bram3_out;
+		  hcount_out <= hcount_in;
+		  vcount_out <= vcount_in;
+		  data_valid_out <= 1;
+	  end else begin
+		  data_valid_out <= 0;
+	  end
+
+  end
+  
+
 endmodule
 
 
