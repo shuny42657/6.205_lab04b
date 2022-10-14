@@ -43,20 +43,22 @@ module buffer_tb;
     $display("Starting Sim");
     clk = 0;
     rst = 0;
-    #10;
+    #5;
     rst = 1;
     #10;
     rst = 0;
-    #10;
     data_valid_in = 1;
+    #10
     // Your code here!
-    for(int i = 0;i<3;i+=1)begin
+    for(int i = 1;i<6;i+=1)begin
 	    for(int j = 0;j<320;j+=1)begin
 		    hcount_in = j;
 		    vcount_in = i;
+		    pixel_data_in = i;
 		    #10;
 	    end
     end
+    data_valid_in = 1;
 
     $display("Finishing Sim");
     $finish;
