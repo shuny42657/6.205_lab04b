@@ -18,11 +18,11 @@ module buffer (
   );
 
   // Your code here!
-
-  xilinx_true_dual_port_read_first_1_clock_ram #(3,320,"HIGH_PERFORMANCE","") bram1(.addra(hcount_in),.addrb(addr1),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[3]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram1_out),.doutb(bram1_b));
-  xilinx_true_dual_port_read_first_1_clock_ram #(3,320,"HIGH_PERFORMANCE","") bram2(.addra(hcount_in),.addrb(addr2),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[2]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram2_out),.doutb(bram2_b));
-  xilinx_true_dual_port_read_first_1_clock_ram #(3,320,"HIGH_PERFORMANCE","") bram3(.addra(hcount_in),.addrb(addr3),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[1]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram3_out),.doutb(bram3_b));
-  xilinx_true_dual_port_read_first_1_clock_ram #(3,320,"HIGH_PERFORMANCE","") bram4(.addra(hcount_in),.addrb(addr4),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[0]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram4_out),.doutb(bram4_b));
+iverilog -g2012 -Wall -o sim/sim.out  sim/simple_counter_tb.sv src/simple_counter.sv
+  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram1(.addra(hcount_in),.addrb(addr1),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[3]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram1_out),.doutb(bram1_b));
+  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram2(.addra(hcount_in),.addrb(addr2),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[2]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram2_out),.doutb(bram2_b));
+  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram3(.addra(hcount_in),.addrb(addr3),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[1]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram3_out),.doutb(bram3_b));
+  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram4(.addra(hcount_in),.addrb(addr4),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[0]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram4_out),.doutb(bram4_b));
 
   logic [8:0] addr1,addr2,addr3,addr4; 
   logic [15:0]bram1_out,bram2_out,bram3_out,bram4_out;
@@ -30,7 +30,7 @@ module buffer (
   logic [3:0] write_in;
   logic [1:0] data_valid_out_pipe;
   logic [10:0] hcount_pipe[1:0];
-  logic [9:0] vcount_pipe[1:0];
+  logic [9:0] vcount_pipe[1:0];iverilog -g2012 -Wall -o sim/sim.out  sim/simple_counter_tb.sv src/simple_counter.sv
 
   assign addr1 = vcount_in; //(hcount,vcount)
   assign addr2 = vcount_in < 1 ? vcount_in+240-1:vcount_in-1; //(hcount,vcount-1)
@@ -62,20 +62,8 @@ module buffer (
 		  case(write_in)
 			  4'b1000:begin
 				  //writing to bram1
-				  line_buffer_out[2] <= bram2_out;
-				  line_buffer_out[1] <= bram3_out;
-				  line_buffer_out[0] <= bram4_out;
-			  end
-			  4'b0100:begin
-				  //writing to bram2
-				  line_buffer_out[2] <= bram3_out;
-				  line_buffer_out[1] <= bram4_out;
-				  line_buffer_out[0] <= bram1_out;
-			  end
-			  4'b0010:begin
-				  //writing to bram3
 				  line_buffer_out[2] <= bram4_out;
-				  line_buffer_out[1] <= bram1_out;
+				  line_buffer_out[1] <= bram3_out;
 				  line_buffer_out[0] <= bram2_out;
 			  end
 			  4'b0001:begin
@@ -83,6 +71,18 @@ module buffer (
 				  line_buffer_out[2] <= bram3_out;
 				  line_buffer_out[1] <= bram2_out;
 				  line_buffer_out[0] <= bram1_out;
+			  end
+			  4'b0010:begin
+				  //writing to bram3
+				  line_buffer_out[2] <= bram2_out;
+				  line_buffer_out[1] <= bram1_out;
+				  line_buffer_out[0] <= bram4_out;
+			  end
+			  4'b0100:begin
+				  //writing to bram2
+				  line_buffer_out[2] <= bram1_out;
+				  line_buffer_out[1] <= bram4_out;
+				  line_buffer_out[0] <= bram3_out;
 			  end
 		  endcase
 		  if(hcount_in == 319)begin
