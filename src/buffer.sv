@@ -18,32 +18,34 @@ module buffer (
   );
 
   // Your code here!
-iverilog -g2012 -Wall -o sim/sim.out  sim/simple_counter_tb.sv src/simple_counter.sv
-  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram1(.addra(hcount_in),.addrb(addr1),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[3]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram1_out),.doutb(bram1_b));
-  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram2(.addra(hcount_in),.addrb(addr2),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[2]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram2_out),.doutb(bram2_b));
-  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram3(.addra(hcount_in),.addrb(addr3),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[1]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram3_out),.doutb(bram3_b));
-  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram4(.addra(hcount_in),.addrb(addr4),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(write_in[0]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram4_out),.doutb(bram4_b));
+  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram1(.addra(hcount_in),.addrb(addr1),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(actually_write_in[3]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram1_out),.doutb(bram1_b));
+  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram2(.addra(hcount_in),.addrb(addr2),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(actually_write_in[2]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram2_out),.doutb(bram2_b));
+  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram3(.addra(hcount_in),.addrb(addr3),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(actually_write_in[1]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram3_out),.doutb(bram3_b));
+  xilinx_true_dual_port_read_first_1_clock_ram #(16,320,"HIGH_PERFORMANCE","") bram4(.addra(hcount_in),.addrb(addr4),.dina(pixel_data_in),.dinb(3'b0),.clka(clk_in),.wea(actually_write_in[0]),.web(1'b0),.ena(1'b1),.enb(1'b0),.rsta(rst_in),.rstb(rst_in),.regcea(1'b1),.regceb(1'b0),.douta(bram4_out),.doutb(bram4_b));
 
   logic [8:0] addr1,addr2,addr3,addr4; 
   logic [15:0]bram1_out,bram2_out,bram3_out,bram4_out;
   logic [15:0]bram1_b,bram2_b,bram3_b,bram4_b;
   logic [3:0] write_in;
+  logic [3:0] actually_write_in;
   logic [1:0] data_valid_out_pipe;
   logic [10:0] hcount_pipe[1:0];
-  logic [9:0] vcount_pipe[1:0];iverilog -g2012 -Wall -o sim/sim.out  sim/simple_counter_tb.sv src/simple_counter.sv
-
+  logic [9:0] vcount_pipe[1:0];
+  logic [15:0]bram1_pipe,bram2_pipe,bram3_pipe,bram4_pipe;
   assign addr1 = vcount_in; //(hcount,vcount)
   assign addr2 = vcount_in < 1 ? vcount_in+240-1:vcount_in-1; //(hcount,vcount-1)
   assign addr3 = vcount_in < 2 ? vcount_in+240-2:vcount_in-2; //(hcount,vcount-2)
   assign addr4 = vcount_in < 3 ? vcount_in+240-3:vcount_in-3; //(hcount,vcount-3)
+  assign actually_write_in[0] = write_in[0] && data_valid_in;
+  assign actually_write_in[1] = write_in[1] && data_valid_in;
+  assign actually_write_in[2] = write_in[2] && data_valid_in;
+  assign actually_write_in[3] = write_in[3] && data_valid_in;
   always_ff @(posedge clk_in)begin
 	  data_valid_out_pipe[0] <= data_valid_in;
 	  data_valid_out_pipe[1] <= data_valid_out_pipe[0];
 	  data_valid_out <= data_valid_out_pipe[1];
-	  if (data_valid_in)begin
-		  hcount_pipe[0] <= hcount_in;
-		  vcount_pipe[0] <= vcount_in;
-	  end
+          hcount_pipe[0] <= hcount_in;
+	  vcount_pipe[0] <= vcount_in;
 	  hcount_pipe[1] <= hcount_pipe[0];
 	  hcount_out <= hcount_pipe[1];
 	  vcount_pipe[1] <= vcount_pipe[0];
@@ -55,42 +57,49 @@ iverilog -g2012 -Wall -o sim/sim.out  sim/simple_counter_tb.sv src/simple_counte
 		  data_valid_out <= 0;
 		  write_in <= 4'b1000;
 	  end
-	  if(data_valid_in)begin
-		  line_buffer_out[0] <= bram1_out;
-		  line_buffer_out[1] <= bram2_out;
-		  line_buffer_out[2] <= bram3_out;
 		  case(write_in)
 			  4'b1000:begin
 				  //writing to bram1
-				  line_buffer_out[2] <= bram4_out;
-				  line_buffer_out[1] <= bram3_out;
-				  line_buffer_out[0] <= bram2_out;
+				  bram4_pipe <= bram4_out;
+				  bram3_pipe <= bram3_out;
+				  bram2_pipe <= bram2_out;
+				  line_buffer_out[2] <= bram4_pipe;
+				  line_buffer_out[1] <= bram3_pipe;
+				  line_buffer_out[0] <= bram2_pipe;
 			  end
 			  4'b0001:begin
 				  //writing to bram4
-				  line_buffer_out[2] <= bram3_out;
-				  line_buffer_out[1] <= bram2_out;
-				  line_buffer_out[0] <= bram1_out;
+				  bram3_pipe <= bram3_out;
+				  bram2_pipe <= bram2_out;
+				  bram1_pipe <= bram1_out;
+				  line_buffer_out[2] <= bram3_pipe;
+				  line_buffer_out[1] <= bram2_pipe;
+				  line_buffer_out[0] <= bram1_pipe;
 			  end
 			  4'b0010:begin
 				  //writing to bram3
-				  line_buffer_out[2] <= bram2_out;
-				  line_buffer_out[1] <= bram1_out;
-				  line_buffer_out[0] <= bram4_out;
+				  bram2_pipe <= bram2_out;
+				  bram1_pipe <= bram1_out;
+				  bram4_pipe <= bram4_out;
+				  line_buffer_out[2] <= bram2_pipe;
+				  line_buffer_out[1] <= bram1_pipe;
+				  line_buffer_out[0] <= bram4_pipe;
 			  end
 			  4'b0100:begin
 				  //writing to bram2
-				  line_buffer_out[2] <= bram1_out;
-				  line_buffer_out[1] <= bram4_out;
-				  line_buffer_out[0] <= bram3_out;
+				  bram1_pipe <= bram1_out;
+				  bram4_pipe <= bram4_out;
+				  bram3_pipe <= bram3_out;
+				  line_buffer_out[2] <= bram1_pipe;
+				  line_buffer_out[1] <= bram4_pipe;
+				  line_buffer_out[0] <= bram3_pipe;
 			  end
 		  endcase
-		  if(hcount_in == 319)begin
-			  for(int i  = 1;i<4;i+=1)begin
-				  write_in[i] <= write_in[i-1];
-			  end
-			  write_in[0] <= write_in[3];
+	  if(hcount_in == 319)begin
+		  for(int i = 1;i<4;i+=1)begin
+			  write_in[i] <= write_in[i-1];
 		  end
+		  write_in[0] <= write_in[3];
 	  end
   end
   
