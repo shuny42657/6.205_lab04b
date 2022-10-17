@@ -1,0 +1,136 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Oct  6 21:45:46 2022
+# Process ID: 33144
+# Current directory: /home/builder/lab04/lab04_release-master
+# Command line: vivado -mode batch -source build.tcl
+# Log file: /home/builder/lab04/lab04_release-master/vivado.log
+# Journal file: /home/builder/lab04/lab04_release-master/vivado.jou
+# Running On: EECS-DIGITAL-27, OS: Linux, CPU Frequency: 3517.573 MHz, CPU Physical cores: 4, Host memory: 8225 MB
+#-----------------------------------------------------------
+source build.tcl
+# set partNum xc7a100tcsg324-1
+# set outputDir obj
+# file mkdir $outputDir
+# set files [glob -nocomplain "$outputDir/*"]
+# if {[llength $files] != 0} {
+#     # clear folder contents
+#     puts "deleting contents of $outputDir"
+#     file delete -force {*}[glob -directory $outputDir *];
+# } else {
+#     puts "$outputDir is empty"
+# }
+obj is empty
+# read_verilog -sv [ glob ./src/*.sv ]
+# read_xdc ./xdc/top_level.xdc
+# read_mem [ glob ./data/*.mem ]
+# set_part $partNum
+INFO: [Coretcl 2-1500] The part has been set to 'xc7a100tcsg324-1' for the current project only. Run set_part -help for more details. To evaluate different speed grades in the current design, use the set_speed_grade command, or use the open_checkpoint -part command to change the part used by an existing checkpoint design.
+# synth_design -top top_level -part $partNum -verbose
+Command: synth_design -top top_level -part xc7a100tcsg324-1 -verbose
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 33165
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2622.988 ; gain = 0.000 ; free physical = 411 ; free virtual = 5944
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_level' [/home/builder/lab04/lab04_release-master/src/top_level.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_lab3' [/home/builder/lab04/lab04_release-master/src/clk_wiz_lab3.sv:68]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [/opt/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:55203]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [/opt/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:55203]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/opt/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:63509]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 50.375000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 15.500000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 5 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [/opt/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:63509]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/opt/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [/opt/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_lab3' (0#1) [/home/builder/lab04/lab04_release-master/src/clk_wiz_lab3.sv:68]
+INFO: [Synth 8-6157] synthesizing module 'vga' [/home/builder/lab04/lab04_release-master/src/vga.sv:18]
+INFO: [Synth 8-6155] done synthesizing module 'vga' (0#1) [/home/builder/lab04/lab04_release-master/src/vga.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'camera' [/home/builder/lab04/lab04_release-master/src/camera.sv:4]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/builder/lab04/lab04_release-master/src/camera.sv:44]
+INFO: [Synth 8-6155] done synthesizing module 'camera' (0#1) [/home/builder/lab04/lab04_release-master/src/camera.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'rotate' [/home/builder/lab04/lab04_release-master/src/rotate.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'rotate' (0#1) [/home/builder/lab04/lab04_release-master/src/rotate.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'xilinx_true_dual_port_read_first_2_clock_ram' [/home/builder/lab04/lab04_release-master/src/xilinx_true_dual_port_read_first_2_clock_ram.sv:10]
+	Parameter RAM_WIDTH bound to: 16 - type: integer 
+	Parameter RAM_DEPTH bound to: 76800 - type: integer 
+WARNING: [Synth 8-6896] loop limit (65536) exceeded inside initial block, initial block items will be ignored [/home/builder/lab04/lab04_release-master/src/xilinx_true_dual_port_read_first_2_clock_ram.sv:55]
+WARNING: [Synth 8-6896] loop limit (65536) exceeded inside initial block, initial block items will be ignored [/home/builder/lab04/lab04_release-master/src/xilinx_true_dual_port_read_first_2_clock_ram.sv:61]
+INFO: [Synth 8-6155] done synthesizing module 'xilinx_true_dual_port_read_first_2_clock_ram' (0#1) [/home/builder/lab04/lab04_release-master/src/xilinx_true_dual_port_read_first_2_clock_ram.sv:10]
+INFO: [Synth 8-6157] synthesizing module 'mirror' [/home/builder/lab04/lab04_release-master/src/mirror.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'mirror' (0#1) [/home/builder/lab04/lab04_release-master/src/mirror.sv:4]
+WARNING: [Synth 8-567] referenced signal 'hcount' should be on the sensitivity list [/home/builder/lab04/lab04_release-master/src/top_level.sv:193]
+WARNING: [Synth 8-567] referenced signal 'vcount' should be on the sensitivity list [/home/builder/lab04/lab04_release-master/src/top_level.sv:193]
+INFO: [Synth 8-6157] synthesizing module 'scale' [/home/builder/lab04/lab04_release-master/src/scale.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'scale' (0#1) [/home/builder/lab04/lab04_release-master/src/scale.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'rgb_to_ycrcb' [/home/builder/lab04/lab04_release-master/src/rgb_to_ycrcb.sv:59]
+INFO: [Synth 8-6155] done synthesizing module 'rgb_to_ycrcb' (0#1) [/home/builder/lab04/lab04_release-master/src/rgb_to_ycrcb.sv:59]
+INFO: [Synth 8-6157] synthesizing module 'lab04_ssc' [/home/builder/lab04/lab04_release-master/src/lab04_ssc.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'lab04_ssc' (0#1) [/home/builder/lab04/lab04_release-master/src/lab04_ssc.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'threshold' [/home/builder/lab04/lab04_release-master/src/threshold.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/builder/lab04/lab04_release-master/src/threshold.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'threshold' (0#1) [/home/builder/lab04/lab04_release-master/src/threshold.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'center_of_mass' [/home/builder/lab04/lab04_release-master/src/center_of_mass.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'divider' [/home/builder/lab04/lab04_release-master/src/divider.sv:4]
+	Parameter WIDTH bound to: 33 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'divider' (0#1) [/home/builder/lab04/lab04_release-master/src/divider.sv:4]
+WARNING: [Synth 8-689] width (11) of port connection 'quotient_out' does not match port width (33) of module 'divider' [/home/builder/lab04/lab04_release-master/src/center_of_mass.sv:29]
+WARNING: [Synth 8-689] width (1) of port connection 'remainder_out' does not match port width (33) of module 'divider' [/home/builder/lab04/lab04_release-master/src/center_of_mass.sv:29]
+WARNING: [Synth 8-689] width (10) of port connection 'quotient_out' does not match port width (33) of module 'divider' [/home/builder/lab04/lab04_release-master/src/center_of_mass.sv:30]
+WARNING: [Synth 8-689] width (1) of port connection 'remainder_out' does not match port width (33) of module 'divider' [/home/builder/lab04/lab04_release-master/src/center_of_mass.sv:30]
+INFO: [Synth 8-6155] done synthesizing module 'center_of_mass' (0#1) [/home/builder/lab04/lab04_release-master/src/center_of_mass.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'image_sprite' [/home/builder/lab04/lab04_release-master/src/image_sprite.sv:6]
+	Parameter WIDTH bound to: 256 - type: integer 
+	Parameter HEIGHT bound to: 256 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xilinx_single_port_ram_read_first' [/home/builder/lab04/lab04_release-master/src/xilinx_single_port_ram_read_first.sv:10]
+	Parameter RAM_WIDTH bound to: 8 - type: integer 
+	Parameter RAM_DEPTH bound to: 65536 - type: integer 
+	Parameter RAM_PERFORMANCE bound to: HIGH_PERFORMANCE - type: string 
+	Parameter INIT_FILE bound to: image.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'image.mem' is read successfully [/home/builder/lab04/lab04_release-master/src/xilinx_single_port_ram_read_first.sv:33]
+INFO: [Synth 8-6155] done synthesizing module 'xilinx_single_port_ram_read_first' (0#1) [/home/builder/lab04/lab04_release-master/src/xilinx_single_port_ram_read_first.sv:10]
+INFO: [Synth 8-6157] synthesizing module 'xilinx_single_port_ram_read_first__parameterized0' [/home/builder/lab04/lab04_release-master/src/xilinx_single_port_ram_read_first.sv:10]
+	Parameter RAM_WIDTH bound to: 12 - type: integer 
+	Parameter RAM_DEPTH bound to: 256 - type: integer 
+	Parameter RAM_PERFORMANCE bound to: HIGH_PERFORMANCE - type: string 
+	Parameter INIT_FILE bound to: palette.mem - type: string 
+INFO: [Synth 8-3876] $readmem data file 'palette.mem' is read successfully [/home/builder/lab04/lab04_release-master/src/xilinx_single_port_ram_read_first.sv:33]
+INFO: [Synth 8-6155] done synthesizing module 'xilinx_single_port_ram_read_first__parameterized0' (0#1) [/home/builder/lab04/lab04_release-master/src/xilinx_single_port_ram_read_first.sv:10]
+INFO: [Synth 8-6155] done synthesizing module 'image_sprite' (0#1) [/home/builder/lab04/lab04_release-master/src/image_sprite.sv:6]
+WARNING: [Synth 8-689] width (32) of port connection 'x_in' does not match port width (11) of module 'image_sprite' [/home/builder/lab04/lab04_release-master/src/top_level.sv:314]
+WARNING: [Synth 8-689] width (32) of port connection 'y_in' does not match port width (10) of module 'image_sprite' [/home/builder/lab04/lab04_release-master/src/top_level.sv:315]
+WARNING: [Synth 8-7071] port 'in_sprite' of module 'image_sprite' is unconnected for instance 'com_sprite_m' [/home/builder/lab04/lab04_release-master/src/top_level.sv:309]
+WARNING: [Synth 8-7023] instance 'com_sprite_m' of module 'image_sprite' has 8 connections declared, but only 7 given [/home/builder/lab04/lab04_release-master/src/top_level.sv:309]
+INFO: [Synth 8-6157] synthesizing module 'vga_mux' [/home/builder/lab04/lab04_release-master/src/vga_mux.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'vga_mux' (0#1) [/home/builder/lab04/lab04_release-master/src/vga_mux.sv:1]
+ERROR: [Synth 8-281] expression must be of a packed type [/home/builder/lab04/lab04_release-master/src/top_level.sv:351]
+ERROR: [Synth 8-281] expression must be of a packed type [/home/builder/lab04/lab04_release-master/src/top_level.sv:351]
+ERROR: [Synth 8-281] expression must be of a packed type [/home/builder/lab04/lab04_release-master/src/top_level.sv:351]
+ERROR: [Synth 8-6156] failed synthesizing module 'top_level' [/home/builder/lab04/lab04_release-master/src/top_level.sv:3]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2622.988 ; gain = 0.000 ; free physical = 1255 ; free virtual = 6796
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+49 Infos, 12 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  6 21:46:04 2022...

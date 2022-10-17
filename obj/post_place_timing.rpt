@@ -1,0 +1,102 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Fri Oct  7 09:44:31 2022
+| Host         : EECS-DIGITAL-22 running 64-bit Ubuntu 20.04.5 LTS
+| Command      : report_timing -file obj/post_place_timing.rpt
+| Design       : top_level
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             3.947ns  (required time - arrival time)
+  Source:                 y_com_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Destination:            com_sprite_m/image/BRAM_reg_1_7/ADDRARDADDR[15]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            15.385ns  (clk_out1_clk_wiz_0 rise@15.385ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        10.603ns  (logic 3.311ns (31.227%)  route 7.292ns (68.773%))
+  Logic Levels:           10  (CARRY4=5 LUT2=2 LUT3=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.007ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.485ns = ( 13.899 - 15.385 ) 
+    Source Clock Delay      (SCD):    -1.005ns
+    Clock Pessimism Removal (CPR):    0.473ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.251ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_gen/clk_100mhz
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_gen/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.233     2.715    clk_gen/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.154    -4.439 r  clk_gen/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.719    -2.720    clk_gen/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.624 r  clk_gen/clkout1_buf/O
+                         net (fo=654, estimated)      1.619    -1.005    clk_65mhz
+    SLICE_X60Y81         FDRE                                         r  y_com_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X60Y81         FDRE (Prop_fdre_C_Q)         0.478    -0.527 f  y_com_reg[6]/Q
+                         net (fo=6, estimated)        1.045     0.518    com_sprite_m/p_1_out_inferred__0/i__carry__0_1
+    SLICE_X64Y81         LUT4 (Prop_lut4_I0_O)        0.301     0.819 f  com_sprite_m/i__carry_i_7__2/O
+                         net (fo=1, estimated)        0.491     1.310    com_sprite_m/i__carry_i_7__2_n_0
+    SLICE_X64Y81         LUT5 (Prop_lut5_I2_O)        0.124     1.434 r  com_sprite_m/i__carry_i_5__2/O
+                         net (fo=29, estimated)       1.123     2.557    com_sprite_m/y_com_reg[7]
+    SLICE_X47Y79         LUT3 (Prop_lut3_I1_O)        0.124     2.681 r  com_sprite_m/i__carry_i_4__3/O
+                         net (fo=1, routed)           0.000     2.681    com_sprite_m/i__carry_i_4__3_n_0
+    SLICE_X47Y79         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.247     2.928 r  com_sprite_m/p_1_out_inferred__0/i__carry/O[0]
+                         net (fo=1, estimated)        1.348     4.276    com_sprite_m/A[0]
+    SLICE_X76Y77         LUT2 (Prop_lut2_I1_O)        0.299     4.575 r  com_sprite_m/i__carry__0_i_8/O
+                         net (fo=1, routed)           0.000     4.575    com_sprite_m/i__carry__0_i_8_n_0
+    SLICE_X76Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     5.108 r  com_sprite_m/i__carry__0_i_1/CO[3]
+                         net (fo=1, estimated)        0.000     5.108    com_sprite_m/i__carry__0_i_1_n_0
+    SLICE_X76Y78         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.219     5.327 r  com_sprite_m/i__carry__1_i_6/O[0]
+                         net (fo=1, estimated)        0.574     5.901    com_sprite_m/PCOUT[11]
+    SLICE_X74Y77         LUT2 (Prop_lut2_I1_O)        0.295     6.196 r  com_sprite_m/i__carry__1_i_2__1/O
+                         net (fo=1, routed)           0.000     6.196    com_sprite_m/i__carry__1_i_2__1_n_0
+    SLICE_X74Y77         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     6.572 r  com_sprite_m/image_addr_inferred__0/i__carry__1/CO[3]
+                         net (fo=1, estimated)        0.000     6.572    com_sprite_m/image_addr_inferred__0/i__carry__1_n_0
+    SLICE_X74Y78         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.315     6.887 r  com_sprite_m/image_addr_inferred__0/i__carry__2/O[3]
+                         net (fo=16, estimated)       2.711     9.598    com_sprite_m/image/ADDRARDADDR[15]
+    RAMB36_X2Y27         RAMB36E1                                     r  com_sprite_m/image/BRAM_reg_1_7/ADDRARDADDR[15]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     15.385    15.385 r  
+    E3                                                0.000    15.385 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000    15.385    clk_gen/clk_100mhz
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.796 r  clk_gen/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.171    17.967    clk_gen/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.404    10.563 r  clk_gen/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.633    12.196    clk_gen/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.287 r  clk_gen/clkout1_buf/O
+                         net (fo=654, estimated)      1.612    13.899    com_sprite_m/image/clk_out1
+    RAMB36_X2Y27         RAMB36E1                                     r  com_sprite_m/image/BRAM_reg_1_7/CLKARDCLK
+                         clock pessimism              0.473    14.373    
+                         clock uncertainty           -0.130    14.242    
+    RAMB36_X2Y27         RAMB36E1 (Setup_ramb36e1_CLKARDCLK_ADDRARDADDR[15])
+                                                     -0.698    13.544    com_sprite_m/image/BRAM_reg_1_7
+  -------------------------------------------------------------------
+                         required time                         13.544    
+                         arrival time                          -9.598    
+  -------------------------------------------------------------------
+                         slack                                  3.947    
+
+
+
+

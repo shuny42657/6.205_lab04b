@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Fri Oct  7 09:43:24 2022
+# Process ID: 11514
+# Current directory: /home/builder/lab04_/lab04_release-master
+# Command line: vivado -mode batch -source build.tcl
+# Log file: /home/builder/lab04_/lab04_release-master/vivado.log
+# Journal file: /home/builder/lab04_/lab04_release-master/vivado.jou
+# Running On: EECS-DIGITAL-22, OS: Linux, CPU Frequency: 3702.525 MHz, CPU Physical cores: 4, Host memory: 8225 MB
+#-----------------------------------------------------------
+source build.tcl

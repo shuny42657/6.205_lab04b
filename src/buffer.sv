@@ -45,7 +45,8 @@ module buffer (
 	  data_valid_out_pipe[1] <= data_valid_out_pipe[0];
 	  data_valid_out <= data_valid_out_pipe[1];
           hcount_pipe[0] <= hcount_in;
-	  vcount_pipe[0] <= vcount_in;
+	  //vcount_pipe[0] <= vcount_in;
+	  vcount_pipe[0] <= vcount_in < 2 ? vcount_in + 240 - 2:vcount_in-2;
 	  hcount_pipe[1] <= hcount_pipe[0];
 	  hcount_out <= hcount_pipe[1];
 	  vcount_pipe[1] <= vcount_pipe[0];
