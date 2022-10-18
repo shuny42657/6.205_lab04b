@@ -22,10 +22,11 @@ module convolution #(
 
     logic signed [2:0][2:0][15:0] caches;
    
-    logic [15:0] r_conv,g_conv,b_conv; 
-    logic [4:0] r_out;
-    logic [5:0] g_out;
-    logic [4:0] b_out;
+    logic signed [15:0] r_conv,g_conv,b_conv;
+    logic signed [15:0] r_shift,g_shift,b_shift; 
+    logic signed [4:0] r_out;
+    logic signed [5:0] g_out;
+    logic signed [4:0] b_out;
 
     // Your code here!
 
@@ -47,30 +48,68 @@ module convolution #(
     // end
     //
     //
-    logic [1:0] data_valid_pipe,hcount_pipe,vcount_pipe;
-
+    logic [3:0] data_valid_pipe;
+    logic [10:0] hcount_pipe [3:0];
+    logic [9:0] vcount_pipe [3:0];
     always_ff @(posedge clk_in)begin
 	    data_valid_pipe[0] <= data_valid_in;
-	    data_valid_pipe[1] <= data_valid_pipe[0];
-	    data_valid_out <= data_valid_pipe[1];
 	    hcount_pipe[0] <= hcount_in;
-	    hcount_pipe[1] <= hcount_pipe[0];
-	    hcount_out <= hcount_pipe[1];
 	    vcount_pipe[0] <= vcount_in;
-	    vcount_pipe[1] <= vcount_pipe[0];
-	    vcount_out <= vcount_pipe[1];
+	    for(int i = 1;i<4;i = i+1)begin
+		    data_valid_pipe[i] <= data_valid_pipe[i-1];
+		    hcount_pipe[i] <= hcount_pipe[i-1];
+		    vcount_pipe[i] <= vcount_pipe[i-1];
+	    end
+	    data_valid_out <= data_valid_pipe[3];
+	    hcount_out <= hcount_pipe[3];
+	    vcount_out <= vcount_pipe[3];
     end
     always_comb begin
+	    /*
+	     * r_conv = $signed(coffs[0][0])*$signed({1'b0,caches[0][0][15:11]}) + 
+	     * 		
 	    r_conv = 0;
 	    g_conv = 0;
 	    b_conv = 0;
-	    for (int i = 0;i<3;i = i + 1)begin
+	    /*for (int i = 0;i<3;i = i + 1)begin
 		    for(int j = 0;j<3;j = j + 1)begin
 			    r_conv = r_conv + $signed(coffs[i][j])*$signed({1'b0,caches[i][j][15:11]});
 			    g_conv = g_conv + $signed(coffs[i][j])*$signed({1'b0,caches[i][j][10:5]});
 			    b_conv = b_conv + $signed(coffs[i][j])*$signed({1'b0,caches[i][j][4:0]});
 		    end
-	    end
+	    end*/
+	    r_conv = 0;
+	    b_conv = 0;
+	    g_conv = 0;
+	    r_conv = $signed(r_conv) + $signed(coffs[0][0])*$signed({1'b0,caches[0][0][15:11]});
+            g_conv = $signed(g_conv) + $signed(coffs[0][0])*$signed({1'b0,caches[0][0][10:5]});
+            b_conv = $signed(b_conv) + $signed(coffs[0][0])*$signed({1'b0,caches[0][0][4:0]});
+	    r_conv = $signed(r_conv) + $signed(coffs[0][1])*$signed({1'b0,caches[0][1][15:11]});
+            g_conv = $signed(g_conv) + $signed(coffs[0][1])*$signed({1'b0,caches[0][1][10:5]});
+            b_conv = $signed(b_conv) + $signed(coffs[0][1])*$signed({1'b0,caches[0][1][4:0]});
+	    r_conv = $signed(r_conv) + $signed(coffs[0][2])*$signed({1'b0,caches[0][2][15:11]});
+            g_conv = $signed(g_conv) + $signed(coffs[0][2])*$signed({1'b0,caches[0][2][10:5]});
+            b_conv = $signed(b_conv) + $signed(coffs[0][2])*$signed({1'b0,caches[0][2][4:0]});
+	    r_conv = $signed(r_conv) + $signed(coffs[1][0])*$signed({1'b0,caches[1][0][15:11]});
+            g_conv = $signed(g_conv) + $signed(coffs[1][0])*$signed({1'b0,caches[1][0][10:5]});
+            b_conv = $signed(b_conv) + $signed(coffs[1][0])*$signed({1'b0,caches[1][0][4:0]});
+	    r_conv = $signed(r_conv) + $signed(coffs[1][1])*$signed({1'b0,caches[1][1][15:11]});
+            g_conv = $signed(g_conv) + $signed(coffs[1][1])*$signed({1'b0,caches[1][1][10:5]});
+            b_conv = $signed(b_conv) + $signed(coffs[1][1])*$signed({1'b0,caches[1][1][4:0]});
+	    r_conv = $signed(r_conv) + $signed(coffs[1][2])*$signed({1'b0,caches[1][2][15:11]});
+            g_conv = $signed(g_conv) + $signed(coffs[1][2])*$signed({1'b0,caches[1][2][10:5]});
+            b_conv = $signed(b_conv) + $signed(coffs[1][2])*$signed({1'b0,caches[1][2][4:0]});
+	    r_conv = $signed(r_conv) + $signed(coffs[2][0])*$signed({1'b0,caches[2][0][15:11]});
+            g_conv = $signed(g_conv) + $signed(coffs[2][0])*$signed({1'b0,caches[2][0][10:5]});
+            b_conv = $signed(b_conv) + $signed(coffs[2][0])*$signed({1'b0,caches[2][0][4:0]});
+	    r_conv = $signed(r_conv) + $signed(coffs[2][1])*$signed({1'b0,caches[2][1][15:11]});
+            g_conv = $signed(g_conv) + $signed(coffs[2][1])*$signed({1'b0,caches[2][1][10:5]});
+            b_conv = $signed(b_conv) + $signed(coffs[2][1])*$signed({1'b0,caches[2][1][4:0]});
+	    r_conv = $signed(r_conv) + $signed(coffs[2][2])*$signed({1'b0,caches[2][2][15:11]});
+            g_conv = $signed(g_conv) + $signed(coffs[2][2])*$signed({1'b0,caches[2][2][10:5]});
+            b_conv = $signed(b_conv) + $signed(coffs[2][2])*$signed({1'b0,caches[2][2][4:0]});
+
+
 	    /*r_conv = r_conv >>> shift;
 	    g_conv = g_conv >>> shift;
 	    b_conv = b_conv >>> shift;*/
@@ -80,24 +119,34 @@ module convolution #(
 		    r_out <= 0;
 		    g_out <= 0;
 		    b_out <= 0;
-		    rst_in <= 0;
+		    caches <= 0;
 	    end
 
-	    if(data_valid_pipe[1])begin
+	    if(data_valid_in)begin
 		    //write in data
-		    for(int i = 0;i<3;i+=1)begin
+		    caches[0] <= caches[1];
+		    caches[1] <= caches[2];
+		    caches[2] <= data_in;
+		    /*for(int i = 0;i<3;i=i+1)begin
 			   caches[i][2] <= caches[i][1];
 			   caches[i][1] <= caches[i][0];
 			   caches[i][0] <= data_in[i];
-		    end 
+		    end*/ 
 
-		    r_conv = r_conv >>> shift;
-		    g_conv = g_conv >>> shift;
-		    b_conv = b_conv >>> shift;
-		    r_out <= r_conv < 0 ? 0 : r_conv;
-		    g_out <= g_conv < 0 ? 0 : g_conv;
-		    b_out <= b_conv < 0 ? 0 : b_conv;
+		    /*r_shift <= r_conv >>> shift;
+		    g_shift <= g_conv >>> shift;
+		    b_shift <= b_conv >>> shift;
+		    r_out <= r_shift < 0 ? 0 : r_shift;
+		    g_out <= g_shift < 0 ? 0 : g_shift;
+		    b_out <= b_shift < 0 ? 0 : b_shift;*/
+		    //line_out <= {r_out[4:0],g_out[5:0],b_out[4:0]};
 	    end
+	    r_shift <= r_conv >>> shift;
+            g_shift <= g_conv >>> shift;
+            b_shift <= b_conv >>> shift;
+            r_out <= r_shift < 0 ? 0 : r_shift;
+            g_out <= g_shift < 0 ? 0 : g_shift;
+            b_out <= b_shift < 0 ? 0 : b_shift;
 	    line_out <= {r_out[4:0],g_out[5:0],b_out[4:0]};
     end
 endmodule

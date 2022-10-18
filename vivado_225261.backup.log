@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Tue Oct 18 12:26:44 2022
+# Process ID: 225261
+# Current directory: /home/builder/Lab04b
+# Command line: vivado -mode batch -source build.tcl
+# Log file: /home/builder/Lab04b/vivado.log
+# Journal file: /home/builder/Lab04b/vivado.jou
+# Running On: EECS-DIGITAL-22, OS: Linux, CPU Frequency: 3702.938 MHz, CPU Physical cores: 4, Host memory: 8225 MB
+#-----------------------------------------------------------
+source build.tcl
+# set partNum xc7a100tcsg324-1
+# set outputDir obj
+# file mkdir $outputDir
+# set files [glob -nocomplain "$outputDir/*"]
+# if {[llength $files] != 0} {
+#     # clear folder contents
+#     puts "deleting contents of $outputDir"
+#     file delete -force {*}[glob -directory $outputDir *];
+# } else {
+#     puts "$outputDir is empty"
+# }
+deleting contents of obj
+# read_verilog -sv [ glob ./src/*.sv ]
+# read_xdc ./xdc/top_level.xdc
+ERROR: [Common 17-275] File does not exist [/home/builder/Lab04b/xdc/top_level.xdc]
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 18 12:26:50 2022...
