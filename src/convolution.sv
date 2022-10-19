@@ -52,17 +52,20 @@ module convolution #(
     logic [10:0] hcount_pipe [3:0];
     logic [9:0] vcount_pipe [3:0];
     always_ff @(posedge clk_in)begin
-	    data_valid_pipe[0] <= data_valid_in;
+		    data_valid_pipe[0] <= data_valid_in;
+            	    hcount_pipe[0] <= hcount_in;
+            		vcount_pipe[0] <= vcount_in;
+	    /*data_valid_pipe[0] <= data_valid_in;
 	    hcount_pipe[0] <= hcount_in;
-	    vcount_pipe[0] <= vcount_in;
+	    vcount_pipe[0] <= vcount_in;*/
 	    for(int i = 1;i<4;i = i+1)begin
 		    data_valid_pipe[i] <= data_valid_pipe[i-1];
 		    hcount_pipe[i] <= hcount_pipe[i-1];
 		    vcount_pipe[i] <= vcount_pipe[i-1];
 	    end
-	    data_valid_out <= data_valid_pipe[3];
-	    hcount_out <= hcount_pipe[3];
-	    vcount_out <= vcount_pipe[3];
+	    data_valid_out <= data_valid_pipe[2];
+	    hcount_out <= hcount_pipe[2];
+	    vcount_out <= vcount_pipe[2];
     end
     always_comb begin
 	    /*

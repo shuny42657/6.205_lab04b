@@ -1,4 +1,4 @@
-timescale 1ns / 1ps
+`timescale 1ns / 1ps
 
 module top_level(
   input wire clk_100mhz, //clock @ 100 mhz
@@ -269,16 +269,6 @@ module top_level(
     .data_valid_out(valid_pixel_rotate));
 
   //NEW FOR LAB 04B (END)----------------------------------------------
-  //Rotates Image to render correctly (pi/2 CCW rotate):
-  rotate rotate_m (
-    .cam_clk_in(cam_clk_in),
-    .valid_pixel_in(valid_pixel),
-    .pixel_in(cam_pixel),
-    .valid_pixel_out(valid_pixel_rotate),
-    .pixel_out(pixel_rotate),
-    .frame_done_in(frame_done),
-    .pixel_addr_in(pixel_addr_in));
-
   //Two Clock Frame Buffer:
   //Data written on 16.67 MHz (From camera)
   //Data read on 65 MHz (start of video pipeline information)
