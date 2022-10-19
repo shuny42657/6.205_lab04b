@@ -1,0 +1,87 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.1 (lin64) Build 3526262 Mon Apr 18 15:47:01 MDT 2022
+| Date         : Wed Oct 19 15:07:12 2022
+| Host         : EECS-DIGITAL-22 running 64-bit Ubuntu 20.04.5 LTS
+| Command      : report_timing -file obj/post_place_timing.rpt
+| Design       : top_level
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             5.971ns  (required time - arrival time)
+  Source:                 hcount_pipe_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Destination:            rgbtoycrcb_m/yb_reg/A[8]
+                            (rising edge-triggered cell DSP48E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            15.385ns  (clk_out1_clk_wiz_0 rise@15.385ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        5.354ns  (logic 1.606ns (29.996%)  route 3.748ns (70.004%))
+  Logic Levels:           4  (CARRY4=2 LUT2=1 LUT3=1)
+  Clock Path Skew:        0.001ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.488ns = ( 13.897 - 15.385 ) 
+    Source Clock Delay      (SCD):    -1.008ns
+    Clock Pessimism Removal (CPR):    0.480ns
+  Clock Uncertainty:      0.130ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.251ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000     0.000    clk_gen/clk_100mhz
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  clk_gen/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.233     2.715    clk_gen/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.154    -4.439 r  clk_gen/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.719    -2.720    clk_gen/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096    -2.624 r  clk_gen/clkout1_buf/O
+                         net (fo=1499, estimated)     1.616    -1.008    clk_65mhz
+    SLICE_X55Y82         FDRE                                         r  hcount_pipe_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X55Y82         FDRE (Prop_fdre_C_Q)         0.419    -0.589 r  hcount_pipe_reg[6]/Q
+                         net (fo=3, estimated)        0.680     0.091    hcount_pipe[6]
+    SLICE_X54Y82         LUT2 (Prop_lut2_I0_O)        0.296     0.387 r  yb_reg_i_27/O
+                         net (fo=1, routed)           0.000     0.387    yb_reg_i_27_n_0
+    SLICE_X54Y82         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     0.763 r  yb_reg_i_11/CO[3]
+                         net (fo=1, estimated)        0.000     0.763    yb_reg_i_11_n_0
+    SLICE_X54Y83         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.157     0.920 r  yb_reg_i_7/CO[1]
+                         net (fo=17, estimated)       2.154     3.074    frame_buffer/cbr_reg[0]
+    SLICE_X13Y92         LUT3 (Prop_lut3_I1_O)        0.358     3.432 r  frame_buffer/yb_reg_i_2/O
+                         net (fo=2, estimated)        0.914     4.346    rgbtoycrcb_m/b_in[3]
+    DSP48_X0Y33          DSP48E1                                      r  rgbtoycrcb_m/yb_reg/A[8]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     15.385    15.385 r  
+    E3                                                0.000    15.385 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000    15.385    clk_gen/clk_100mhz
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.796 r  clk_gen/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.171    17.967    clk_gen/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.404    10.563 r  clk_gen/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.633    12.196    clk_gen/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    12.287 r  clk_gen/clkout1_buf/O
+                         net (fo=1499, estimated)     1.610    13.897    rgbtoycrcb_m/clk_out1
+    DSP48_X0Y33          DSP48E1                                      r  rgbtoycrcb_m/yb_reg/CLK
+                         clock pessimism              0.480    14.377    
+                         clock uncertainty           -0.130    14.247    
+    DSP48_X0Y33          DSP48E1 (Setup_dsp48e1_CLK_A[8])
+                                                     -3.930    10.317    rgbtoycrcb_m/yb_reg
+  -------------------------------------------------------------------
+                         required time                         10.317    
+                         arrival time                          -4.346    
+  -------------------------------------------------------------------
+                         slack                                  5.971    
+
+
+
+

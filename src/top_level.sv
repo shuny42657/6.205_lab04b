@@ -325,7 +325,7 @@ module top_level(
   //Based on hcount and vcount as well as scaling
   //gate the release of frame buffer information
   //Latency: 0
-  always_ff @(clk_65mhz)begin
+  always_ff @(posedge clk_65mhz)begin
 	  hcount_pipe <= hcount;
 	  vcount_pipe <= vcount;
   end
@@ -470,7 +470,7 @@ module top_level(
   //
   logic [15:0] full_pixel_pipe [3:0];
   always_ff @(posedge clk_65mhz)begin
-	  full_pixel_pipe[0] <= {full_pixel[15:12],full_pixel[10:7],full_pixel[4:1]};
+	  full_pixel_pipe[0] <= full_pixel;//{full_pixel[15:11],full_pixel[10:5],full_pixel[4:1]};
 	  for(int i = 1;i<3;i+=1)begin
 		  full_pixel_pipe[i] <= full_pixel_pipe[i-1];
 	  end

@@ -14,7 +14,7 @@ if {[llength $files] != 0} {
 
 read_verilog -sv [ glob ./src/*.sv ]
 # uncomment line below if verilog files present:
-#read_verilog  [ glob ./src/*.v ]
+read_verilog  [ glob ./src/*.v ]
 read_xdc ./xdc/top_level.xdc
 read_mem [ glob ./data/*.mem ]
 
