@@ -32,10 +32,12 @@ module buffer (
   logic [10:0] hcount_pipe[1:0];
   logic [9:0] vcount_pipe[1:0];
   logic [15:0]bram1_pipe,bram2_pipe,bram3_pipe,bram4_pipe;
+
   assign actually_write_in[0] = write_in[0] && data_valid_in;
   assign actually_write_in[1] = write_in[1] && data_valid_in;
   assign actually_write_in[2] = write_in[2] && data_valid_in;
   assign actually_write_in[3] = write_in[3] && data_valid_in;
+
   always_ff @(posedge clk_in)begin
 	  data_valid_out_pipe[0] <= data_valid_in;
 	  data_valid_out_pipe[1] <= data_valid_out_pipe[0];
@@ -92,7 +94,7 @@ module buffer (
 				  line_buffer_out[0] <= bram3_pipe;
 			  end
 		  endcase
-	  if(hcount_in == 319)begin
+	  if(hcount_in == 0 && data_valid_in)begin
 		  write_in <= {write_in[2:0], write_in[3]};
 	  end
   end

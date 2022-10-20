@@ -32,11 +32,11 @@ module filter #(parameter K_SELECT=0)(
     .vcount_out(vcount_buff)
     );
 
-    assign vcount_out = vcount_buff;
+    /*assign vcount_out = vcount_buff;
     assign hcount_out = hcount_buff;
     assign data_valid_out = b_to_c_valid;
-    assign pixel_data_out = buffs[1];
-  /*
+    assign pixel_data_out = buffs[1];*/
+  
     convolution #(
     .K_SELECT(K_SELECT) )
     mconv (
@@ -53,5 +53,5 @@ module filter #(parameter K_SELECT=0)(
   );
 
 
-  */
+ 
 endmodule

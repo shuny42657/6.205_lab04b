@@ -2,13 +2,13 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Wed Oct 19 15:04:56 2022
-# Process ID: 41399
+# Start of session at: Thu Oct 20 11:17:42 2022
+# Process ID: 248113
 # Current directory: /home/builder/Lab04b
 # Command line: vivado -mode batch -source build.tcl
 # Log file: /home/builder/Lab04b/vivado.log
 # Journal file: /home/builder/Lab04b/vivado.jou
-# Running On: EECS-DIGITAL-22, OS: Linux, CPU Frequency: 3586.739 MHz, CPU Physical cores: 4, Host memory: 8225 MB
+# Running On: EECS-DIGITAL-22, OS: Linux, CPU Frequency: 3695.589 MHz, CPU Physical cores: 4, Host memory: 8225 MB
 #-----------------------------------------------------------
 source build.tcl
 # set partNum xc7a100tcsg324-1
@@ -37,12 +37,18 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 41427
-ERROR: [Synth 8-2715] syntax error near . [/home/builder/Lab04b/src/top_level.sv:452]
-INFO: [Synth 8-8750] module 'top_level' ignored due to previous errors [/home/builder/Lab04b/src/top_level.sv:522]
+INFO: [Synth 8-7075] Helper process launched with PID 248135
+ERROR: [Synth 8-2715] syntax error near 1ns [/home/builder/Lab04b/src/top_level.sv:1]
+ERROR: [Synth 8-2715] syntax error near output [/home/builder/Lab04b/src/top_level.sv:16]
+ERROR: [Synth 8-8779] SystemVerilog keyword output used in incorrect context [/home/builder/Lab04b/src/top_level.sv:16]
+ERROR: [Synth 8-2715] syntax error near output [/home/builder/Lab04b/src/top_level.sv:17]
+ERROR: [Synth 8-8779] SystemVerilog keyword output used in incorrect context [/home/builder/Lab04b/src/top_level.sv:17]
+ERROR: [Synth 8-2715] syntax error near ) [/home/builder/Lab04b/src/top_level.sv:20]
+ERROR: [Synth 8-2715] syntax error near assign [/home/builder/Lab04b/src/top_level.sv:24]
+ERROR: [Synth 8-8779] SystemVerilog keyword assign used in incorrect context [/home/builder/Lab04b/src/top_level.sv:24]
 Failed to read verilog '/home/builder/Lab04b/src/top_level.sv'
 INFO: [Common 17-83] Releasing license: Synthesis
-7 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
+6 Infos, 0 Warnings, 0 Critical Warnings and 9 Errors encountered.
 synth_design failed
 ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Wed Oct 19 15:05:10 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 20 11:17:56 2022...

@@ -147,9 +147,9 @@ module convolution #(
 	    r_shift <= r_conv >>> shift;
             g_shift <= g_conv >>> shift;
             b_shift <= b_conv >>> shift;
-            r_out <= r_shift < 0 ? 0 : r_shift;
-            g_out <= g_shift < 0 ? 0 : g_shift;
-            b_out <= b_shift < 0 ? 0 : b_shift;
+            r_out <= r_shift < 5'sd0 ? 0 : r_shift;
+            g_out <= g_shift < 6'sd0 ? 0 : g_shift;
+            b_out <= b_shift < 5'sd0 ? 0 : b_shift;
 	    line_out <= {r_out[4:0],g_out[5:0],b_out[4:0]};
     end
 endmodule
