@@ -2,13 +2,13 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Thu Oct 20 09:57:33 2022
-# Process ID: 217167
+# Start of session at: Thu Oct 20 21:02:30 2022
+# Process ID: 174495
 # Current directory: /home/builder/Lab04b
 # Command line: vivado -mode batch -source build.tcl
 # Log file: /home/builder/Lab04b/vivado.log
 # Journal file: /home/builder/Lab04b/vivado.jou
-# Running On: EECS-DIGITAL-22, OS: Linux, CPU Frequency: 3701.627 MHz, CPU Physical cores: 4, Host memory: 8225 MB
+# Running On: EECS-DIGITAL-22, OS: Linux, CPU Frequency: 3702.149 MHz, CPU Physical cores: 4, Host memory: 8225 MB
 #-----------------------------------------------------------
 source build.tcl
 # set partNum xc7a100tcsg324-1
@@ -37,7 +37,7 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 217197
+INFO: [Synth 8-7075] Helper process launched with PID 174520
 WARNING: [Synth 8-6901] identifier 'coeffs_i' is used before its declaration [/home/builder/Lab04b/src/kernels.sv:10]
 WARNING: [Synth 8-6901] identifier 'coeffs_i' is used before its declaration [/home/builder/Lab04b/src/kernels.sv:11]
 WARNING: [Synth 8-6901] identifier 'coeffs_i' is used before its declaration [/home/builder/Lab04b/src/kernels.sv:12]
@@ -47,42 +47,10 @@ WARNING: [Synth 8-6901] identifier 'coeffs_i' is used before its declaration [/h
 WARNING: [Synth 8-6901] identifier 'coeffs_i' is used before its declaration [/home/builder/Lab04b/src/kernels.sv:16]
 WARNING: [Synth 8-6901] identifier 'coeffs_i' is used before its declaration [/home/builder/Lab04b/src/kernels.sv:17]
 WARNING: [Synth 8-6901] identifier 'coeffs_i' is used before its declaration [/home/builder/Lab04b/src/kernels.sv:18]
-WARNING: [Synth 8-1102] /* in comment [/home/builder/Lab04b/src/convolution.sv:77]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2625.020 ; gain = 0.000 ; free physical = 125 ; free virtual = 6051
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2620.988 ; gain = 0.000 ; free physical = 509 ; free virtual = 5623
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top_level' [/home/builder/Lab04b/src/top_level.sv:3]
-INFO: [Synth 8-6157] synthesizing module 'filter' [/home/builder/Lab04b/src/filter.sv:2]
-	Parameter K_SELECT bound to: 0 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'buffer' [/home/builder/Lab04b/src/buffer.sv:5]
-INFO: [Synth 8-6157] synthesizing module 'xilinx_true_dual_port_read_first_1_clock_ram' [/home/builder/Lab04b/src/xilinx_true_dual_port_read_first_1_clock_ram.v:10]
-	Parameter RAM_WIDTH bound to: 16 - type: integer 
-	Parameter RAM_DEPTH bound to: 320 - type: integer 
-	Parameter RAM_PERFORMANCE bound to: HIGH_PERFORMANCE - type: string 
-	Parameter INIT_FILE bound to: (null) - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'xilinx_true_dual_port_read_first_1_clock_ram' (0#1) [/home/builder/Lab04b/src/xilinx_true_dual_port_read_first_1_clock_ram.v:10]
-WARNING: [Synth 8-689] width (11) of port connection 'addra' does not match port width (9) of module 'xilinx_true_dual_port_read_first_1_clock_ram' [/home/builder/Lab04b/src/buffer.sv:21]
-WARNING: [Synth 8-689] width (11) of port connection 'addra' does not match port width (9) of module 'xilinx_true_dual_port_read_first_1_clock_ram' [/home/builder/Lab04b/src/buffer.sv:22]
-WARNING: [Synth 8-689] width (11) of port connection 'addra' does not match port width (9) of module 'xilinx_true_dual_port_read_first_1_clock_ram' [/home/builder/Lab04b/src/buffer.sv:23]
-WARNING: [Synth 8-689] width (11) of port connection 'addra' does not match port width (9) of module 'xilinx_true_dual_port_read_first_1_clock_ram' [/home/builder/Lab04b/src/buffer.sv:24]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/builder/Lab04b/src/buffer.sv:59]
-INFO: [Synth 8-6155] done synthesizing module 'buffer' (0#1) [/home/builder/Lab04b/src/buffer.sv:5]
-INFO: [Synth 8-6155] done synthesizing module 'filter' (0#1) [/home/builder/Lab04b/src/filter.sv:2]
-INFO: [Synth 8-6157] synthesizing module 'filter__parameterized0' [/home/builder/Lab04b/src/filter.sv:2]
-	Parameter K_SELECT bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'filter__parameterized0' (0#1) [/home/builder/Lab04b/src/filter.sv:2]
-INFO: [Synth 8-6157] synthesizing module 'filter__parameterized1' [/home/builder/Lab04b/src/filter.sv:2]
-	Parameter K_SELECT bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'filter__parameterized1' (0#1) [/home/builder/Lab04b/src/filter.sv:2]
-INFO: [Synth 8-6157] synthesizing module 'filter__parameterized2' [/home/builder/Lab04b/src/filter.sv:2]
-	Parameter K_SELECT bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'filter__parameterized2' (0#1) [/home/builder/Lab04b/src/filter.sv:2]
-INFO: [Synth 8-6157] synthesizing module 'filter__parameterized3' [/home/builder/Lab04b/src/filter.sv:2]
-	Parameter K_SELECT bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'filter__parameterized3' (0#1) [/home/builder/Lab04b/src/filter.sv:2]
-INFO: [Synth 8-6157] synthesizing module 'filter__parameterized4' [/home/builder/Lab04b/src/filter.sv:2]
-	Parameter K_SELECT bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'filter__parameterized4' (0#1) [/home/builder/Lab04b/src/filter.sv:2]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_lab3' [/home/builder/Lab04b/src/clk_wiz_lab3.sv:68]
 INFO: [Synth 8-6157] synthesizing module 'IBUF' [/opt/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:55203]
 INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [/opt/Xilinx/Vivado/2022.1/scripts/rt/data/unisim_comp.v:55203]
@@ -109,10 +77,8 @@ INFO: [Synth 8-6155] done synthesizing module 'vga' (0#1) [/home/builder/Lab04b/
 INFO: [Synth 8-6157] synthesizing module 'camera' [/home/builder/Lab04b/src/camera.sv:4]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/builder/Lab04b/src/camera.sv:44]
 INFO: [Synth 8-6155] done synthesizing module 'camera' (0#1) [/home/builder/Lab04b/src/camera.sv:4]
-INFO: [Synth 8-6157] synthesizing module 'recover' [/home/builder/Lab04b/src/recover.sv:2]
-INFO: [Synth 8-6155] done synthesizing module 'recover' (0#1) [/home/builder/Lab04b/src/recover.sv:2]
-INFO: [Synth 8-6157] synthesizing module 'rotate2' [/home/builder/Lab04b/src/rotate2.sv:2]
-INFO: [Synth 8-6155] done synthesizing module 'rotate2' (0#1) [/home/builder/Lab04b/src/rotate2.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'rotate' [/home/builder/Lab04b/src/rotate.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'rotate' (0#1) [/home/builder/Lab04b/src/rotate.sv:1]
 INFO: [Synth 8-6157] synthesizing module 'xilinx_true_dual_port_read_first_2_clock_ram' [/home/builder/Lab04b/src/xilinx_true_dual_port_read_first_2_clock_ram.sv:10]
 	Parameter RAM_WIDTH bound to: 16 - type: integer 
 	Parameter RAM_DEPTH bound to: 76800 - type: integer 
@@ -121,6 +87,8 @@ WARNING: [Synth 8-6896] loop limit (65536) exceeded inside initial block, initia
 INFO: [Synth 8-6155] done synthesizing module 'xilinx_true_dual_port_read_first_2_clock_ram' (0#1) [/home/builder/Lab04b/src/xilinx_true_dual_port_read_first_2_clock_ram.sv:10]
 INFO: [Synth 8-6157] synthesizing module 'mirror' [/home/builder/Lab04b/src/mirror.sv:4]
 INFO: [Synth 8-6155] done synthesizing module 'mirror' (0#1) [/home/builder/Lab04b/src/mirror.sv:4]
+WARNING: [Synth 8-567] referenced signal 'hcount' should be on the sensitivity list [/home/builder/Lab04b/src/top_level.sv:193]
+WARNING: [Synth 8-567] referenced signal 'vcount' should be on the sensitivity list [/home/builder/Lab04b/src/top_level.sv:193]
 INFO: [Synth 8-6157] synthesizing module 'scale' [/home/builder/Lab04b/src/scale.sv:4]
 INFO: [Synth 8-6155] done synthesizing module 'scale' (0#1) [/home/builder/Lab04b/src/scale.sv:4]
 INFO: [Synth 8-6157] synthesizing module 'rgb_to_ycrcb' [/home/builder/Lab04b/src/rgb_to_ycrcb.sv:59]
@@ -157,39 +125,32 @@ INFO: [Synth 8-6157] synthesizing module 'xilinx_single_port_ram_read_first__par
 INFO: [Synth 8-3876] $readmem data file 'palette.mem' is read successfully [/home/builder/Lab04b/src/xilinx_single_port_ram_read_first.sv:33]
 INFO: [Synth 8-6155] done synthesizing module 'xilinx_single_port_ram_read_first__parameterized0' (0#1) [/home/builder/Lab04b/src/xilinx_single_port_ram_read_first.sv:10]
 INFO: [Synth 8-6155] done synthesizing module 'image_sprite' (0#1) [/home/builder/Lab04b/src/image_sprite.sv:6]
-WARNING: [Synth 8-689] width (32) of port connection 'x_in' does not match port width (11) of module 'image_sprite' [/home/builder/Lab04b/src/top_level.sv:449]
-WARNING: [Synth 8-689] width (32) of port connection 'y_in' does not match port width (10) of module 'image_sprite' [/home/builder/Lab04b/src/top_level.sv:450]
-WARNING: [Synth 8-7071] port 'in_sprite' of module 'image_sprite' is unconnected for instance 'com_sprite_m' [/home/builder/Lab04b/src/top_level.sv:444]
-WARNING: [Synth 8-7023] instance 'com_sprite_m' of module 'image_sprite' has 8 connections declared, but only 7 given [/home/builder/Lab04b/src/top_level.sv:444]
+WARNING: [Synth 8-689] width (32) of port connection 'x_in' does not match port width (11) of module 'image_sprite' [/home/builder/Lab04b/src/top_level.sv:314]
+WARNING: [Synth 8-689] width (32) of port connection 'y_in' does not match port width (10) of module 'image_sprite' [/home/builder/Lab04b/src/top_level.sv:315]
+WARNING: [Synth 8-7071] port 'in_sprite' of module 'image_sprite' is unconnected for instance 'com_sprite_m' [/home/builder/Lab04b/src/top_level.sv:309]
+WARNING: [Synth 8-7023] instance 'com_sprite_m' of module 'image_sprite' has 8 connections declared, but only 7 given [/home/builder/Lab04b/src/top_level.sv:309]
 INFO: [Synth 8-6157] synthesizing module 'vga_mux' [/home/builder/Lab04b/src/vga_mux.sv:1]
 INFO: [Synth 8-6155] done synthesizing module 'vga_mux' (0#1) [/home/builder/Lab04b/src/vga_mux.sv:1]
 INFO: [Synth 8-6155] done synthesizing module 'top_level' (0#1) [/home/builder/Lab04b/src/top_level.sv:3]
-WARNING: [Synth 8-6014] Unused sequential element full_pixel_pipe_reg[2] was removed.  [/home/builder/Lab04b/src/top_level.sv:473]
-WARNING: [Synth 8-6014] Unused sequential element full_pixel_pipe_reg[1] was removed.  [/home/builder/Lab04b/src/top_level.sv:473]
-WARNING: [Synth 8-6014] Unused sequential element full_pixel_pipe_reg[0] was removed.  [/home/builder/Lab04b/src/top_level.sv:473]
-WARNING: [Synth 8-6014] Unused sequential element x_in_pipe_reg[0] was removed.  [/home/builder/Lab04b/src/top_level.sv:397]
-WARNING: [Synth 8-6014] Unused sequential element y_in_pipe_reg[0] was removed.  [/home/builder/Lab04b/src/top_level.sv:398]
-WARNING: [Synth 8-6014] Unused sequential element hcount_pipe__reg[0] was removed.  [/home/builder/Lab04b/src/top_level.sv:431]
-WARNING: [Synth 8-6014] Unused sequential element vcount_pipe__reg[0] was removed.  [/home/builder/Lab04b/src/top_level.sv:432]
-WARNING: [Synth 8-6014] Unused sequential element hcount_pipe__reg[2] was removed.  [/home/builder/Lab04b/src/top_level.sv:431]
-WARNING: [Synth 8-6014] Unused sequential element hcount_pipe__reg[1] was removed.  [/home/builder/Lab04b/src/top_level.sv:431]
-WARNING: [Synth 8-6014] Unused sequential element vcount_pipe__reg[2] was removed.  [/home/builder/Lab04b/src/top_level.sv:432]
-WARNING: [Synth 8-6014] Unused sequential element vcount_pipe__reg[1] was removed.  [/home/builder/Lab04b/src/top_level.sv:432]
-WARNING: [Synth 8-3848] Net full_pixel_pipe[3] in module/entity top_level does not have driver. [/home/builder/Lab04b/src/top_level.sv:471]
-WARNING: [Synth 8-7129] Port cam_clk_in in module recover is either unconnected or has no load
+WARNING: [Synth 8-6014] Unused sequential element hcount_pipe__reg[0] was removed.  [/home/builder/Lab04b/src/top_level.sv:296]
+WARNING: [Synth 8-6014] Unused sequential element vcount_pipe__reg[0] was removed.  [/home/builder/Lab04b/src/top_level.sv:297]
+WARNING: [Synth 8-6014] Unused sequential element hcount_pipe__reg[2] was removed.  [/home/builder/Lab04b/src/top_level.sv:296]
+WARNING: [Synth 8-6014] Unused sequential element hcount_pipe__reg[1] was removed.  [/home/builder/Lab04b/src/top_level.sv:296]
+WARNING: [Synth 8-6014] Unused sequential element vcount_pipe__reg[2] was removed.  [/home/builder/Lab04b/src/top_level.sv:297]
+WARNING: [Synth 8-6014] Unused sequential element vcount_pipe__reg[1] was removed.  [/home/builder/Lab04b/src/top_level.sv:297]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2625.020 ; gain = 0.000 ; free physical = 1225 ; free virtual = 7111
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2620.988 ; gain = 0.000 ; free physical = 1539 ; free virtual = 6670
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2625.020 ; gain = 0.000 ; free physical = 1224 ; free virtual = 7110
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2620.988 ; gain = 0.000 ; free physical = 1539 ; free virtual = 6670
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2625.020 ; gain = 0.000 ; free physical = 1224 ; free virtual = 7110
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2620.988 ; gain = 0.000 ; free physical = 1539 ; free virtual = 6670
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2625.020 ; gain = 0.000 ; free physical = 1208 ; free virtual = 7102
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2620.988 ; gain = 0.000 ; free physical = 1530 ; free virtual = 6661
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -203,29 +164,28 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/top_level_pr
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2673.043 ; gain = 0.000 ; free physical = 1125 ; free virtual = 7019
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2669.012 ; gain = 0.000 ; free physical = 1459 ; free virtual = 6590
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2673.043 ; gain = 0.000 ; free physical = 1125 ; free virtual = 7019
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2669.012 ; gain = 0.000 ; free physical = 1459 ; free virtual = 6590
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1207 ; free virtual = 7101
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1556 ; free virtual = 6671
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1207 ; free virtual = 7101
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1556 ; free virtual = 6671
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1215 ; free virtual = 7101
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1548 ; free virtual = 6670
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'fsm_state_reg' in module 'camera'
-INFO: [Synth 8-3971] The signal "xilinx_true_dual_port_read_first_1_clock_ram:/BRAM_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -235,7 +195,7 @@ INFO: [Synth 8-3971] The signal "xilinx_true_dual_port_read_first_1_clock_ram:/B
 INFO: [Synth 8-3354] encoded FSM with state register 'fsm_state_reg' using encoding 'sequential' in module 'camera'
 INFO: [Synth 8-3971] The signal "xilinx_true_dual_port_read_first_2_clock_ram:/BRAM_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1220 ; free virtual = 7109
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1544 ; free virtual = 6677
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -244,15 +204,12 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   32 Bit       Adders := 1     
 	   4 Input   22 Bit       Adders := 2     
-	   2 Input   17 Bit       Adders := 1     
 	   3 Input   16 Bit       Adders := 1     
 	   3 Input   13 Bit       Adders := 1     
 	   3 Input   12 Bit       Adders := 1     
-	   2 Input   11 Bit       Adders := 6     
-	   2 Input   10 Bit       Adders := 18    
-	   2 Input    9 Bit       Adders := 1     
-	   2 Input    7 Bit       Adders := 1     
-	   2 Input    6 Bit       Adders := 2     
+	   2 Input   11 Bit       Adders := 5     
+	   2 Input   10 Bit       Adders := 3     
+	   2 Input    9 Bit       Adders := 2     
 	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
 	               33 Bit    Registers := 8     
@@ -260,33 +217,34 @@ Detailed RTL Component Info :
 	               22 Bit    Registers := 2     
 	               19 Bit    Registers := 2     
 	               17 Bit    Registers := 1     
-	               16 Bit    Registers := 170   
-	               12 Bit    Registers := 9     
-	               11 Bit    Registers := 30    
-	               10 Bit    Registers := 34    
+	               16 Bit    Registers := 6     
+	               12 Bit    Registers := 13    
+	               11 Bit    Registers := 7     
+	               10 Bit    Registers := 10    
+	                9 Bit    Registers := 1     
 	                8 Bit    Registers := 5     
-	                4 Bit    Registers := 19    
-	                2 Bit    Registers := 8     
-	                1 Bit    Registers := 52    
+	                4 Bit    Registers := 12    
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 41    
 +---RAMs : 
 	            1200K Bit	(76800 X 16 bit)          RAMs := 1     
 	             512K Bit	(65536 X 8 bit)          RAMs := 1     
-	               5K Bit	(320 X 16 bit)          RAMs := 28    
 	               3K Bit	(256 X 12 bit)          RAMs := 1     
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   17 Bit        Muxes := 1     
 	   3 Input   16 Bit        Muxes := 1     
 	   2 Input   16 Bit        Muxes := 2     
 	   2 Input   12 Bit        Muxes := 4     
 	   4 Input   12 Bit        Muxes := 2     
-	   2 Input   11 Bit        Muxes := 10    
-	   2 Input   10 Bit        Muxes := 11    
+	   2 Input   11 Bit        Muxes := 9     
+	   2 Input   10 Bit        Muxes := 4     
 	   4 Input   10 Bit        Muxes := 2     
+	   2 Input    9 Bit        Muxes := 1     
 	   8 Input    7 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 6     
 	   8 Input    6 Bit        Muxes := 1     
-	   5 Input    1 Bit        Muxes := 35    
-	   2 Input    1 Bit        Muxes := 52    
+	   2 Input    1 Bit        Muxes := 50    
 	   3 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -304,13 +262,6 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-DSP Report: Generating DSP pixel_addr_out_reg, operation Mode is: (C'+(((D:0x140)+A)*(B:0xf0))')'.
-DSP Report: register vcount_pipe_reg is absorbed into DSP pixel_addr_out_reg.
-DSP Report: register pixel_addr_out_reg is absorbed into DSP pixel_addr_out_reg.
-DSP Report: register prod1_reg is absorbed into DSP pixel_addr_out_reg.
-DSP Report: operator pixel_addr_out0 is absorbed into DSP pixel_addr_out_reg.
-DSP Report: operator prod10 is absorbed into DSP pixel_addr_out_reg.
-DSP Report: operator prod11 is absorbed into DSP pixel_addr_out_reg.
 DSP Report: Generating DSP pixel_addr_out_reg, operation Mode is: C+A*(B:0xf0).
 DSP Report: register pixel_addr_out_reg is absorbed into DSP pixel_addr_out_reg.
 DSP Report: operator pixel_addr_out0 is absorbed into DSP pixel_addr_out_reg.
@@ -339,108 +290,74 @@ DSP Report: operator cbr0 is absorbed into DSP cbr_reg.
 DSP Report: Generating DSP cbg_reg, operation Mode is: (A*(B:0x153))'.
 DSP Report: register cbg_reg is absorbed into DSP cbg_reg.
 DSP Report: operator cbg0 is absorbed into DSP cbg_reg.
-WARNING: [Synth 8-7129] Port cam_clk_in in module recover is either unconnected or has no load
-WARNING: [Synth 8-6014] Unused sequential element bram1/BRAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element bram2/BRAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element bram3/BRAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element bram4/BRAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element mbuff/bram1/BRAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element mbuff/bram2/BRAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element mbuff/bram3/BRAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element mbuff/bram4/BRAM_reg was removed. 
-WARNING: [Synth 8-6014] Unused sequential element BRAM_reg was removed. 
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__0) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__1) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__2) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__3) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__4) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__5) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__6) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__7) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__8) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__9) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__10) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__11) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__12) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__13) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_0__14) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__0) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__1) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__2) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__3) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__4) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__5) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__6) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__7) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__8) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__9) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__10) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__11) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__12) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__13) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
-WARNING: [Synth 8-3332] Sequential element (BRAM_reg_mux_sel_a_pos_1__14) is unused and will be removed from module xilinx_true_dual_port_read_first_2_clock_ram.
+WARNING: [Synth 8-3936] Found unconnected internal register 'full_pixel_pipe_reg[3]' and it is trimmed from '12' to '11' bits. [/home/builder/Lab04b/src/top_level.sv:338]
+WARNING: [Synth 8-3936] Found unconnected internal register 'full_pixel_pipe_reg[2]' and it is trimmed from '12' to '11' bits. [/home/builder/Lab04b/src/top_level.sv:338]
+WARNING: [Synth 8-3936] Found unconnected internal register 'full_pixel_pipe_reg[1]' and it is trimmed from '12' to '11' bits. [/home/builder/Lab04b/src/top_level.sv:338]
+WARNING: [Synth 8-3936] Found unconnected internal register 'full_pixel_pipe_reg[0]' and it is trimmed from '12' to '11' bits. [/home/builder/Lab04b/src/top_level.sv:338]
+WARNING: [Synth 8-6014] Unused sequential element frame_buffer/BRAM_reg was removed. 
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__0) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__1) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__2) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__3) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__4) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__5) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__6) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__7) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__8) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__9) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__10) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__11) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__12) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__13) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_0__14) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__0) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__1) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__2) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__3) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__4) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__5) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__6) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__7) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__8) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__9) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__10) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__11) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__12) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__13) is unused and will be removed from module top_level.
+WARNING: [Synth 8-3332] Sequential element (frame_buffer/BRAM_reg_mux_sel_a_pos_1__14) is unused and will be removed from module top_level.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1182 ; free virtual = 7092
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1517 ; free virtual = 6663
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Preliminary Mapping Report (see note below)
-+---------------------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name                                        | RTL Object           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+---------------------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram1/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram2/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram3/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram4/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram1/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram2/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram3/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram4/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|frame_buffer                                       | BRAM_reg             | 75 K x 16(READ_FIRST)  | W | R | 75 K x 16(WRITE_FIRST) |   | R | Port A and B     | 0      | 48     | 
-|xilinx_single_port_ram_read_first:                 | BRAM_reg             | 64 K x 8(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 16     | 
-|xilinx_single_port_ram_read_first__parameterized0: | BRAM_reg             | 256 x 12(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-+---------------------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++---------------------------------------------------+-----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                        | RTL Object            | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------------------------------------+-----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top_level                                          | frame_buffer/BRAM_reg | 75 K x 16(READ_FIRST)  | W | R | 75 K x 16(WRITE_FIRST) |   | R | Port A and B     | 0      | 48     | 
+|xilinx_single_port_ram_read_first:                 | BRAM_reg              | 64 K x 8(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 16     | 
+|xilinx_single_port_ram_read_first__parameterized0: | BRAM_reg              | 256 x 12(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
++---------------------------------------------------+-----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+-------------+---------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name  | DSP Mapping                     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------+---------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|rotate2      | (C'+(((D:0x140)+A)*(B:0xf0))')' | 17     | 8      | 10     | 9      | 17     | 0    | 0    | 1    | 0    | 0     | 1    | 1    | 
-|mirror       | C+A*(B:0xf0)                    | 10     | 8      | 11     | -      | 17     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
-|rgb_to_ycrcb | (A*(B:0x74))'                   | 10     | 7      | -      | -      | 17     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|rgb_to_ycrcb | PCIN+(A*(B:0x132))'             | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|rgb_to_ycrcb | (PCIN+((A:0x259)*B)')'          | 10     | 10     | -      | -      | 21     | 0    | 0    | -    | -    | -     | 1    | 1    | 
-|rgb_to_ycrcb | (A*(B:0x1ad))'                  | 10     | 9      | -      | -      | 19     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|rgb_to_ycrcb | (A*(B:0x53))'                   | 10     | 7      | -      | -      | 17     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|rgb_to_ycrcb | (A*(B:0xad))'                   | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-|rgb_to_ycrcb | (A*(B:0x153))'                  | 10     | 9      | -      | -      | 19     | 0    | 0    | -    | -    | -     | 1    | 0    | 
-+-------------+---------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mirror       | C+A*(B:0xf0)           | 10     | 8      | 11     | -      | 17     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|rgb_to_ycrcb | (A*(B:0x74))'          | 10     | 7      | -      | -      | 17     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|rgb_to_ycrcb | PCIN+(A*(B:0x132))'    | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|rgb_to_ycrcb | (PCIN+((A:0x259)*B)')' | 10     | 10     | -      | -      | 21     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|rgb_to_ycrcb | (A*(B:0x1ad))'         | 10     | 9      | -      | -      | 19     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|rgb_to_ycrcb | (A*(B:0x53))'          | 10     | 7      | -      | -      | 17     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|rgb_to_ycrcb | (A*(B:0xad))'          | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|rgb_to_ycrcb | (A*(B:0x153))'         | 10     | 9      | -      | -      | 19     | 0    | 0    | -    | -    | -     | 1    | 0    | 
++-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -450,54 +367,26 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1013 ; free virtual = 6915
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1354 ; free virtual = 6492
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 995 ; free virtual = 6905
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1314 ; free virtual = 6452
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM: Final Mapping Report
-+---------------------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|Module Name                                        | RTL Object           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
-+---------------------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram1/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram2/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram3/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram4/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram1/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram2/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram3/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|buffer:                                            | bram4/BRAM_reg       | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram1/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram2/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram3/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|filter__parameterized0:                            | mbuff/bram4/BRAM_reg | 320 x 16(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-|frame_buffer                                       | BRAM_reg             | 75 K x 16(READ_FIRST)  | W | R | 75 K x 16(WRITE_FIRST) |   | R | Port A and B     | 0      | 48     | 
-|xilinx_single_port_ram_read_first:                 | BRAM_reg             | 64 K x 8(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 16     | 
-|xilinx_single_port_ram_read_first__parameterized0: | BRAM_reg             | 256 x 12(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
-+---------------------------------------------------+----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
++---------------------------------------------------+-----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                        | RTL Object            | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------------------------------------+-----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top_level                                          | frame_buffer/BRAM_reg | 75 K x 16(READ_FIRST)  | W | R | 75 K x 16(WRITE_FIRST) |   | R | Port A and B     | 0      | 48     | 
+|xilinx_single_port_ram_read_first:                 | BRAM_reg              | 64 K x 8(READ_FIRST)   | W | R |                        |   |   | Port A           | 0      | 16     | 
+|xilinx_single_port_ram_read_first__parameterized0: | BRAM_reg              | 256 x 12(READ_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
++---------------------------------------------------+-----------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -538,7 +427,7 @@ INFO: [Synth 8-7052] The timing for the instance frame_buffer/BRAM_reg_1_13__0 (
 INFO: [Synth 8-7052] The timing for the instance frame_buffer/BRAM_reg_1_14__0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance frame_buffer/BRAM_reg_1_15__0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 995 ; free virtual = 6905
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1310 ; free virtual = 6456
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -556,37 +445,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 994 ; free virtual = 6905
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1329 ; free virtual = 6459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 994 ; free virtual = 6905
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1329 ; free virtual = 6459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1001 ; free virtual = 6904
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1313 ; free virtual = 6459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1001 ; free virtual = 6904
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1313 ; free virtual = 6459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1001 ; free virtual = 6904
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1313 ; free virtual = 6459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 993 ; free virtual = 6904
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1313 ; free virtual = 6459
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -596,17 +485,10 @@ Static Shift Register Report:
 +------------+------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |Module Name | RTL Name                           | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +------------+------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|top_level   | filtern/mbuff/hcount_out_reg[10]   | 3      | 11    | NO           | NO                 | YES               | 11     | 0       | 
-|top_level   | filtern/mbuff/vcount_out_reg[9]    | 3      | 9     | NO           | NO                 | YES               | 9      | 0       | 
-|top_level   | filtern/mbuff/data_valid_out_reg   | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|top_level   | rotate_m/data_valid_out_reg        | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |top_level   | com_sprite_m/in_sprite_pipe_reg[3] | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |top_level   | mux_pixel_pipe_reg[6][11]          | 7      | 12    | NO           | NO                 | NO                | 12     | 0       | 
 |top_level   | crosshair_pipe_reg[3]              | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|top_level   | hcount_fmux_reg[10]                | 4      | 11    | NO           | NO                 | YES               | 11     | 0       | 
-|top_level   | vcount_fmux_reg[9]                 | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|top_level   | vcount_fmux_reg[8]                 | 4      | 8     | NO           | NO                 | YES               | 8      | 0       | 
-|top_level   | vcount_fmux_reg[0]                 | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|top_level   | x_in_pipe_reg[2][10]               | 3      | 10    | NO           | NO                 | YES               | 10     | 0       | 
 +------------+------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
@@ -620,7 +502,7 @@ DSP Final Report (the ' indicates corresponding REG is set)
 +-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name  | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|mirror       | (C'+A'*B)'     | 9      | 8      | 10     | -      | 17     | 1    | 0    | 0    | -    | -     | 0    | 1    | 
+|mirror       | (C+A*B)'       | 10     | 8      | 11     | -      | 17     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 |rgb_to_ycrcb | (A*B)'         | 10     | 7      | -      | -      | 17     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 |rgb_to_ycrcb | PCIN+(A*B)'    | 10     | 9      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
 |rgb_to_ycrcb | (PCIN+(A*B)')' | 10     | 10     | -      | -      | 21     | 0    | 0    | -    | -    | -     | 1    | 1    | 
@@ -628,7 +510,6 @@ DSP Final Report (the ' indicates corresponding REG is set)
 |rgb_to_ycrcb | (A*B)'         | 10     | 7      | -      | -      | 17     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 |rgb_to_ycrcb | (A*B)'         | 10     | 8      | -      | -      | 18     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 |rgb_to_ycrcb | (A*B)'         | 10     | 9      | -      | -      | 19     | 0    | 0    | -    | -    | -     | 0    | 1    | 
-|rotate2      | (C'+(D+A*B)')' | 17     | 8      | 10     | 9      | 17     | 0    | 0    | 0    | 0    | 0     | 1    | 1    | 
 +-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
@@ -642,54 +523,54 @@ Report Cell Usage:
 +------+-----------+------+
 |      |Cell       |Count |
 +------+-----------+------+
-|1     |BUFG       |     2|
-|2     |CARRY4     |   112|
-|3     |DSP48E1    |     9|
-|8     |LUT1       |    42|
-|9     |LUT2       |   241|
-|10    |LUT3       |   209|
-|11    |LUT4       |   249|
-|12    |LUT5       |   128|
-|13    |LUT6       |   254|
-|14    |MMCME2_ADV |     1|
-|15    |MUXF7      |    20|
-|16    |RAMB18E1   |    29|
-|18    |RAMB36E1   |    64|
-|37    |SRL16E     |    57|
-|38    |FDRE       |  1293|
-|39    |FDSE       |    12|
-|40    |IBUF       |    29|
-|41    |OBUF       |    47|
+|1     |BUFG       |     3|
+|2     |CARRY4     |   121|
+|3     |DSP48E1    |     8|
+|6     |LUT1       |    39|
+|7     |LUT2       |   188|
+|8     |LUT3       |   131|
+|9     |LUT4       |   233|
+|10    |LUT5       |   125|
+|11    |LUT6       |    99|
+|12    |MMCME2_ADV |     1|
+|13    |MUXF7      |     5|
+|14    |RAMB18E1   |     1|
+|15    |RAMB36E1   |    64|
+|34    |SRL16E     |    24|
+|35    |FDRE       |   620|
+|36    |FDSE       |    23|
+|37    |IBUF       |    29|
+|38    |OBUF       |    47|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 993 ; free virtual = 6904
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1313 ; free virtual = 6459
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 43 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 2673.043 ; gain = 0.000 ; free physical = 1054 ; free virtual = 6964
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2673.043 ; gain = 48.023 ; free physical = 1054 ; free virtual = 6964
+Synthesis finished with 0 errors, 0 critical warnings and 38 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 2669.012 ; gain = 0.000 ; free physical = 1372 ; free virtual = 6519
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 2669.012 ; gain = 48.023 ; free physical = 1372 ; free virtual = 6519
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2673.043 ; gain = 0.000 ; free physical = 1148 ; free virtual = 7059
-INFO: [Netlist 29-17] Analyzing 235 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2669.012 ; gain = 0.000 ; free physical = 1466 ; free virtual = 6613
+INFO: [Netlist 29-17] Analyzing 200 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [/home/builder/Lab04b/xdc/top_level.xdc]
 Finished Parsing XDC File [/home/builder/Lab04b/xdc/top_level.xdc]
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2673.043 ; gain = 0.000 ; free physical = 1080 ; free virtual = 6991
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2669.012 ; gain = 0.000 ; free physical = 1399 ; free virtual = 6545
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 78952dda
+Synth Design complete, checksum: a1c0dfb7
 INFO: [Common 17-83] Releasing license: Synthesis
-117 Infos, 80 Warnings, 0 Critical Warnings and 0 Errors encountered.
+97 Infos, 65 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:45 ; elapsed = 00:00:42 . Memory (MB): peak = 2673.043 ; gain = 64.031 ; free physical = 1344 ; free virtual = 7255
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:40 . Memory (MB): peak = 2669.012 ; gain = 64.031 ; free physical = 1674 ; free virtual = 6821
 # write_checkpoint -force $outputDir/post_synth.dcp
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2713.062 ; gain = 0.000 ; free physical = 1341 ; free virtual = 7253
+Write XDEF Complete: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2709.031 ; gain = 0.000 ; free physical = 1669 ; free virtual = 6816
 INFO: [Common 17-1381] The checkpoint '/home/builder/Lab04b/obj/post_synth.dcp' has been generated.
 # report_timing_summary -file $outputDir/post_synth_timing_summary.rpt
 INFO: [Timing 38-35] Done setting XDC timing constraints.
@@ -712,54 +593,55 @@ INFO: [DRC 23-27] Running DRC with 8 threads
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.73 . Memory (MB): peak = 2890.680 ; gain = 89.781 ; free physical = 1053 ; free virtual = 6965
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.74 . Memory (MB): peak = 2885.648 ; gain = 89.781 ; free physical = 1384 ; free virtual = 6531
 
 Starting Cache Timing Information Task
-Ending Cache Timing Information Task | Checksum: eed474dd
+Ending Cache Timing Information Task | Checksum: 17deba682
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2890.680 ; gain = 0.000 ; free physical = 1053 ; free virtual = 6965
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2885.648 ; gain = 0.000 ; free physical = 1384 ; free virtual = 6531
 
 Starting Logic Optimization Task
 
 Phase 1 Retarget
+INFO: [Opt 31-1287] Pulled Inverter com_sprite_m/i__carry__1_i_1__1 into driver instance com_sprite_m/i__carry_i_5__0, which resulted in an inversion of 47 pins
 INFO: [Opt 31-138] Pushed 4 inverter(s) to 64 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 14df42c04
+Phase 1 Retarget | Checksum: 12f82492d
 
-Time (s): cpu = 00:00:00.23 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3051.664 ; gain = 0.000 ; free physical = 845 ; free virtual = 6749
-INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 4 cells
+Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.11 . Memory (MB): peak = 3043.633 ; gain = 0.000 ; free physical = 1171 ; free virtual = 6318
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 8 cells
 INFO: [Opt 31-1021] In phase Retarget, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 167af118a
+Phase 2 Constant propagation | Checksum: 9322b815
 
-Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.14 . Memory (MB): peak = 3051.664 ; gain = 0.000 ; free physical = 837 ; free virtual = 6748
+Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.13 . Memory (MB): peak = 3043.633 ; gain = 0.000 ; free physical = 1171 ; free virtual = 6318
 INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 20409339e
+Phase 3 Sweep | Checksum: 115745535
 
-Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.2 . Memory (MB): peak = 3051.664 ; gain = 0.000 ; free physical = 837 ; free virtual = 6748
+Time (s): cpu = 00:00:00.32 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3043.633 ; gain = 0.000 ; free physical = 1171 ; free virtual = 6318
 INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 20409339e
+Phase 4 BUFG optimization | Checksum: 115745535
 
-Time (s): cpu = 00:00:00.38 ; elapsed = 00:00:00.23 . Memory (MB): peak = 3051.664 ; gain = 0.000 ; free physical = 836 ; free virtual = 6748
+Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.2 . Memory (MB): peak = 3043.633 ; gain = 0.000 ; free physical = 1171 ; free virtual = 6318
 INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
 
 Phase 5 Shift Register Optimization
 INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
-Phase 5 Shift Register Optimization | Checksum: 20409339e
+Phase 5 Shift Register Optimization | Checksum: 115745535
 
-Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.24 . Memory (MB): peak = 3051.664 ; gain = 0.000 ; free physical = 836 ; free virtual = 6748
+Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.2 . Memory (MB): peak = 3043.633 ; gain = 0.000 ; free physical = 1171 ; free virtual = 6318
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Phase 6 Post Processing Netlist
-Phase 6 Post Processing Netlist | Checksum: 20409339e
+Phase 6 Post Processing Netlist | Checksum: 115745535
 
-Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.24 . Memory (MB): peak = 3051.664 ; gain = 0.000 ; free physical = 837 ; free virtual = 6748
+Time (s): cpu = 00:00:00.38 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3043.633 ; gain = 0.000 ; free physical = 1171 ; free virtual = 6318
 INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
 Opt_design Change Summary
 =========================
@@ -768,7 +650,7 @@ Opt_design Change Summary
 -------------------------------------------------------------------------------------------------------------------------
 |  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
 -------------------------------------------------------------------------------------------------------------------------
-|  Retarget                     |               0  |               4  |                                              1  |
+|  Retarget                     |               0  |               8  |                                              1  |
 |  Constant propagation         |               0  |               0  |                                              0  |
 |  Sweep                        |               0  |               0  |                                              0  |
 |  BUFG optimization            |               0  |               0  |                                              0  |
@@ -780,10 +662,10 @@ Opt_design Change Summary
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3051.664 ; gain = 0.000 ; free physical = 837 ; free virtual = 6748
-Ending Logic Optimization Task | Checksum: 109233ee2
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3043.633 ; gain = 0.000 ; free physical = 1171 ; free virtual = 6318
+Ending Logic Optimization Task | Checksum: 1991703de
 
-Time (s): cpu = 00:00:00.54 ; elapsed = 00:00:00.3 . Memory (MB): peak = 3051.664 ; gain = 0.000 ; free physical = 837 ; free virtual = 6748
+Time (s): cpu = 00:00:00.53 ; elapsed = 00:00:00.27 . Memory (MB): peak = 3043.633 ; gain = 0.000 ; free physical = 1171 ; free virtual = 6318
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -796,39 +678,39 @@ INFO: [Pwropt 34-10] Applying ODC optimizations ...
 
 
 Starting PowerOpt Patch Enables Task
-INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 93 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 32 BRAM(s) out of a total of 65 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Pwropt 34-201] Structural ODC has moved 16 WE to EN ports
-Number of BRAM Ports augmented: 48 newly gated: 28 Total Ports: 186
-Number of Flops added for Enable Generation: 7
+Number of BRAM Ports augmented: 48 newly gated: 16 Total Ports: 130
+Number of Flops added for Enable Generation: 1
 
-Ending PowerOpt Patch Enables Task | Checksum: 125068338
+Ending PowerOpt Patch Enables Task | Checksum: 1b4d72e30
 
-Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.36 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1026 ; free virtual = 6938
-Ending Power Optimization Task | Checksum: 125068338
+Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:00.31 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1368 ; free virtual = 6515
+Ending Power Optimization Task | Checksum: 1b4d72e30
 
-Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 170.836 ; free physical = 1037 ; free virtual = 6949
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 176.055 ; free physical = 1376 ; free virtual = 6523
 
 Starting Final Cleanup Task
 
 Starting Logic Optimization Task
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Ending Logic Optimization Task | Checksum: 15393f037
+Ending Logic Optimization Task | Checksum: 12cf08d91
 
-Time (s): cpu = 00:00:00.64 ; elapsed = 00:00:00.26 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 835 ; free virtual = 6747
-Ending Final Cleanup Task | Checksum: 15393f037
+Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.19 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1093 ; free virtual = 6257
+Ending Final Cleanup Task | Checksum: 12cf08d91
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1032 ; free virtual = 6945
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1290 ; free virtual = 6454
 
 Starting Netlist Obfuscation Task
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1032 ; free virtual = 6945
-Ending Netlist Obfuscation Task | Checksum: 15393f037
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1290 ; free virtual = 6454
+Ending Netlist Obfuscation Task | Checksum: 12cf08d91
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1032 ; free virtual = 6945
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1290 ; free virtual = 6454
 INFO: [Common 17-83] Releasing license: Implementation
-24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+25 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 3222.500 ; gain = 421.602 ; free physical = 1032 ; free virtual = 6945
+opt_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3219.688 ; gain = 423.820 ; free physical = 1290 ; free virtual = 6454
 # place_design
 Command: place_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
@@ -848,53 +730,53 @@ INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 
 Phase 1 Placer Initialization
 
 Phase 1.1 Placer Initialization Netlist Sorting
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 996 ; free virtual = 6909
-Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1214f3500
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1337 ; free virtual = 6484
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 91ebf05e
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 996 ; free virtual = 6909
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 996 ; free virtual = 6909
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1337 ; free virtual = 6484
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1337 ; free virtual = 6484
 
 Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
-Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1a8908d1d
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 132ff8442
 
-Time (s): cpu = 00:00:00.61 ; elapsed = 00:00:00.24 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1025 ; free virtual = 6937
+Time (s): cpu = 00:00:00.58 ; elapsed = 00:00:00.27 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1362 ; free virtual = 6510
 
 Phase 1.3 Build Placer Netlist Model
-Phase 1.3 Build Placer Netlist Model | Checksum: 293a64251
+Phase 1.3 Build Placer Netlist Model | Checksum: 232bd3d8f
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.76 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1027 ; free virtual = 6939
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.65 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1362 ; free virtual = 6510
 
 Phase 1.4 Constrain Clocks/Macros
-Phase 1.4 Constrain Clocks/Macros | Checksum: 293a64251
+Phase 1.4 Constrain Clocks/Macros | Checksum: 232bd3d8f
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.77 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1027 ; free virtual = 6939
-Phase 1 Placer Initialization | Checksum: 293a64251
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.66 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1362 ; free virtual = 6510
+Phase 1 Placer Initialization | Checksum: 232bd3d8f
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.78 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1027 ; free virtual = 6939
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.67 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1362 ; free virtual = 6510
 
 Phase 2 Global Placement
 
 Phase 2.1 Floorplanning
-Phase 2.1 Floorplanning | Checksum: 2587af366
+Phase 2.1 Floorplanning | Checksum: 163e4b7ec
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.93 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1020 ; free virtual = 6932
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.77 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1358 ; free virtual = 6506
 
 Phase 2.2 Update Timing before SLR Path Opt
-Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1b7116b44
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1ad0d60f9
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1021 ; free virtual = 6933
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.83 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1359 ; free virtual = 6506
 
 Phase 2.3 Post-Processing in Floorplanning
-Phase 2.3 Post-Processing in Floorplanning | Checksum: 1b7116b44
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1ad0d60f9
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1021 ; free virtual = 6933
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.83 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1359 ; free virtual = 6506
 
 Phase 2.4 Global Placement Core
 
 Phase 2.4.1 Physical Synthesis In Placer
-INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 212 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 129 LUT instances to create LUTNM shape
 INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
-INFO: [Physopt 32-1138] End 1 Pass. Optimized 96 nets or LUTs. Breaked 0 LUT, combined 96 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 59 nets or LUTs. Breaked 0 LUT, combined 59 existing LUTs and moved 0 existing LUT
 INFO: [Physopt 32-65] No nets found for high-fanout optimization.
 INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
@@ -905,7 +787,7 @@ INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was
 INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
 INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
 INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 992 ; free virtual = 6904
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1333 ; free virtual = 6480
 
 Summary of Physical Synthesis Optimizations
 ============================================
@@ -914,7 +796,7 @@ Summary of Physical Synthesis Optimizations
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 |  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
-|  LUT Combining                                    |            0  |             96  |                    96  |           0  |           1  |  00:00:00  |
+|  LUT Combining                                    |            0  |             59  |                    59  |           0  |           1  |  00:00:00  |
 |  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
 |  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
@@ -923,59 +805,59 @@ Summary of Physical Synthesis Optimizations
 |  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
 |  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
-|  Total                                            |            0  |             96  |                    96  |           0  |           4  |  00:00:00  |
+|  Total                                            |            0  |             59  |                    59  |           0  |           4  |  00:00:00  |
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Phase 2.4.1 Physical Synthesis In Placer | Checksum: 1e8dd8847
+Phase 2.4.1 Physical Synthesis In Placer | Checksum: 1062bbdaf
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 992 ; free virtual = 6904
-Phase 2.4 Global Placement Core | Checksum: 1c173de0d
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:03 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1333 ; free virtual = 6481
+Phase 2.4 Global Placement Core | Checksum: 98bc714a
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:04 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 991 ; free virtual = 6903
-Phase 2 Global Placement | Checksum: 1c173de0d
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1333 ; free virtual = 6481
+Phase 2 Global Placement | Checksum: 98bc714a
 
-Time (s): cpu = 00:00:14 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 991 ; free virtual = 6903
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1333 ; free virtual = 6481
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 15c38d3cd
+Phase 3.1 Commit Multi Column Macros | Checksum: 10ecf29cf
 
-Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 990 ; free virtual = 6903
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1333 ; free virtual = 6480
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 13ff99a2f
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 165d25d54
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 990 ; free virtual = 6902
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1333 ; free virtual = 6481
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: f9a9276f
+Phase 3.3 Area Swap Optimization | Checksum: 17586e45a
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 990 ; free virtual = 6902
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1333 ; free virtual = 6481
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 161f939f2
+Phase 3.4 Pipeline Register Optimization | Checksum: c3d38b6d
 
-Time (s): cpu = 00:00:16 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 990 ; free virtual = 6902
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1333 ; free virtual = 6481
 
 Phase 3.5 Small Shape Detail Placement
-Phase 3.5 Small Shape Detail Placement | Checksum: 1dbf54a17
+Phase 3.5 Small Shape Detail Placement | Checksum: a70418e7
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1329 ; free virtual = 6477
 
 Phase 3.6 Re-assign LUT pins
-Phase 3.6 Re-assign LUT pins | Checksum: 163c2e5ba
+Phase 3.6 Re-assign LUT pins | Checksum: ebcbe2bd
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1329 ; free virtual = 6477
 
 Phase 3.7 Pipeline Register Optimization
-Phase 3.7 Pipeline Register Optimization | Checksum: 15c86689b
+Phase 3.7 Pipeline Register Optimization | Checksum: 40e6e393
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
-Phase 3 Detail Placement | Checksum: 15c86689b
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1329 ; free virtual = 6477
+Phase 3 Detail Placement | Checksum: 40e6e393
 
-Time (s): cpu = 00:00:17 ; elapsed = 00:00:05 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:04 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1329 ; free virtual = 6477
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -983,7 +865,7 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-Post Placement Optimization Initialization | Checksum: 15497759a
+Post Placement Optimization Initialization | Checksum: 1871f5307
 
 Phase 4.1.1.1 BUFG Insertion
 
@@ -991,33 +873,33 @@ Starting Physical Synthesis Task
 
 Phase 1 Physical Synthesis Initialization
 INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
-INFO: [Physopt 32-619] Estimated Timing Summary | WNS=6.355 | TNS=0.000 |
-Phase 1 Physical Synthesis Initialization | Checksum: 12a78621e
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=5.263 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 2052f8acd
 
-Time (s): cpu = 00:00:00.42 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
+Time (s): cpu = 00:00:00.31 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1328 ; free virtual = 6477
 INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
-Ending Physical Synthesis Task | Checksum: e2f6ff24
+Ending Physical Synthesis Task | Checksum: 19b573faf
 
-Time (s): cpu = 00:00:00.45 ; elapsed = 00:00:00.12 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
-Phase 4.1.1.1 BUFG Insertion | Checksum: 15497759a
+Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1329 ; free virtual = 6476
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1871f5307
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1329 ; free virtual = 6476
 
 Phase 4.1.1.2 Post Placement Timing Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=6.355. For the most accurate timing information please run report_timing.
-Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: d7970e84
+INFO: [Place 30-746] Post Placement Timing Summary WNS=5.263. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 163aa229d
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1329 ; free virtual = 6476
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
-Phase 4.1 Post Commit Optimization | Checksum: d7970e84
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1329 ; free virtual = 6476
+Phase 4.1 Post Commit Optimization | Checksum: 163aa229d
 
-Time (s): cpu = 00:00:19 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 987 ; free virtual = 6899
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1329 ; free virtual = 6476
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: d7970e84
+Phase 4.2 Post Placement Cleanup | Checksum: 163aa229d
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 988 ; free virtual = 6900
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1328 ; free virtual = 6476
 
 Phase 4.3 Placer Reporting
 
@@ -1036,27 +918,27 @@ INFO: [Place 30-612] Post-Placement Estimated Congestion
 |       West|                1x1|                1x1|
 |___________|___________________|___________________|
 
-Phase 4.3.1 Print Estimated Congestion | Checksum: d7970e84
+Phase 4.3.1 Print Estimated Congestion | Checksum: 163aa229d
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 988 ; free virtual = 6900
-Phase 4.3 Placer Reporting | Checksum: d7970e84
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1328 ; free virtual = 6476
+Phase 4.3 Placer Reporting | Checksum: 163aa229d
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 988 ; free virtual = 6900
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1328 ; free virtual = 6476
 
 Phase 4.4 Final Placement Cleanup
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 988 ; free virtual = 6901
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1328 ; free virtual = 6476
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 988 ; free virtual = 6901
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: aa0b617d
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1328 ; free virtual = 6476
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 11326d84c
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 988 ; free virtual = 6901
-Ending Placer Task | Checksum: 832696e6
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1328 ; free virtual = 6476
+Ending Placer Task | Checksum: afcf582b
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:06 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 988 ; free virtual = 6900
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:05 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1328 ; free virtual = 6476
 INFO: [Common 17-83] Releasing license: Implementation
 29 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:07 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 1016 ; free virtual = 6929
+place_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1352 ; free virtual = 6500
 # report_clock_utilization -file $outputDir/clock_util.rpt
 # if {[get_property SLACK [get_timing_paths -max_paths 1 -nworst 1 -setup]] < 0} {
 #  puts "Found setup timing violations => running physical optimization"
@@ -1067,7 +949,7 @@ INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00.56 ; elapsed = 00:00:00.17 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 981 ; free virtual = 6898
+Write XDEF Complete: Time (s): cpu = 00:00:00.49 ; elapsed = 00:00:00.13 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1324 ; free virtual = 6475
 INFO: [Common 17-1381] The checkpoint '/home/builder/Lab04b/obj/post_place.dcp' has been generated.
 # report_utilization -file $outputDir/post_place_util.rpt
 # report_timing_summary -file $outputDir/post_place_timing_summary.rpt
@@ -1088,127 +970,118 @@ INFO: [Route 35-270] Using Router directive 'Explore'.
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
 
 Phase 1 Build RT Design
-Checksum: PlaceDB: 5c63ceb3 ConstDB: 0 ShapeSum: 26c2c833 RouteDB: 0
-Post Restoration Checksum: NetGraph: b89784f8 NumContArr: 2c7843b2 Constraints: 0 Timing: 0
-Phase 1 Build RT Design | Checksum: e50fc8aa
+Checksum: PlaceDB: 1cf4656d ConstDB: 0 ShapeSum: 92daf2be RouteDB: 0
+Post Restoration Checksum: NetGraph: ffa364fb NumContArr: c0add1a1 Constraints: 0 Timing: 0
+Phase 1 Build RT Design | Checksum: 1c051369c
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 851 ; free virtual = 6772
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1217 ; free virtual = 6348
 
 Phase 2 Router Initialization
 
 Phase 2.1 Fix Topology Constraints
-Phase 2.1 Fix Topology Constraints | Checksum: e50fc8aa
+Phase 2.1 Fix Topology Constraints | Checksum: 1c051369c
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 817 ; free virtual = 6738
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1166 ; free virtual = 6313
 
 Phase 2.2 Pre Route Cleanup
-Phase 2.2 Pre Route Cleanup | Checksum: e50fc8aa
+Phase 2.2 Pre Route Cleanup | Checksum: 1c051369c
 
-Time (s): cpu = 00:00:27 ; elapsed = 00:00:22 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 817 ; free virtual = 6738
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1166 ; free virtual = 6313
  Number of Nodes with overlaps = 0
 
 Phase 2.3 Update Timing
-Phase 2.3 Update Timing | Checksum: 1518aeaa6
+Phase 2.3 Update Timing | Checksum: 2644b040e
 
-Time (s): cpu = 00:00:29 ; elapsed = 00:00:23 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 802 ; free virtual = 6720
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=6.368  | TNS=0.000  | WHS=-0.170 | THS=-22.716|
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:21 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1151 ; free virtual = 6299
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=5.418  | TNS=0.000  | WHS=-0.144 | THS=-9.223 |
 
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.00126213 %
-  Global Horizontal Routing Utilization  = 0.000639386 %
+  Global Vertical Routing Utilization    = 0.00195848 %
+  Global Horizontal Routing Utilization  = 0.000994601 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 2816
+  Number of Failed Nets               = 1508
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 2816
+  Number of Unrouted Nets             = 1508
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 2 Router Initialization | Checksum: b29f18c1
+Phase 2 Router Initialization | Checksum: 18af811db
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:23 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 803 ; free virtual = 6722
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:22 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1150 ; free virtual = 6297
 
 Phase 3 Initial Routing
 
 Phase 3.1 Global Routing
-Phase 3.1 Global Routing | Checksum: b29f18c1
+Phase 3.1 Global Routing | Checksum: 18af811db
 
-Time (s): cpu = 00:00:30 ; elapsed = 00:00:23 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 803 ; free virtual = 6722
-Phase 3 Initial Routing | Checksum: 1219a6241
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:22 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1150 ; free virtual = 6297
+Phase 3 Initial Routing | Checksum: d44fb506
 
-Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 800 ; free virtual = 6717
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:22 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1148 ; free virtual = 6296
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 107
+ Number of Nodes with overlaps = 41
  Number of Nodes with overlaps = 2
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.704  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.720  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.1 Global Iteration 0 | Checksum: 139e1de13
+Phase 4.1 Global Iteration 0 | Checksum: 12ae83784
 
-Time (s): cpu = 00:00:35 ; elapsed = 00:00:25 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 804 ; free virtual = 6714
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
 
 Phase 4.2 Global Iteration 1
- Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.704  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.720  | TNS=0.000  | WHS=N/A    | THS=N/A    |
 
-Phase 4.2 Global Iteration 1 | Checksum: 162d03f63
+Phase 4.2 Global Iteration 1 | Checksum: 1399c4e97
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:25 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6715
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
+Phase 4 Rip-up And Reroute | Checksum: 1399c4e97
 
-Phase 4.3 Global Iteration 2
- Number of Nodes with overlaps = 0
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.704  | TNS=0.000  | WHS=N/A    | THS=N/A    |
-
-Phase 4.3 Global Iteration 2 | Checksum: 254503feb
-
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:25 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6715
-Phase 4 Rip-up And Reroute | Checksum: 254503feb
-
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:25 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6715
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
-Phase 5.1 Delay CleanUp | Checksum: 254503feb
+Phase 5.1 Delay CleanUp | Checksum: 1399c4e97
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:25 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6715
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 254503feb
+Phase 5.2 Clock Skew Optimization | Checksum: 1399c4e97
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:25 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6715
-Phase 5 Delay and Skew Optimization | Checksum: 254503feb
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
+Phase 5 Delay and Skew Optimization | Checksum: 1399c4e97
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:25 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6715
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 1d4f8f115
+Phase 6.1.1 Update Timing | Checksum: 15b992e98
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:26 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6714
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.704  | TNS=0.000  | WHS=0.119  | THS=0.000  |
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=4.720  | TNS=0.000  | WHS=0.107  | THS=0.000  |
 
-Phase 6.1 Hold Fix Iter | Checksum: 2455dace1
+Phase 6.1 Hold Fix Iter | Checksum: 156a41051
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6714
-Phase 6 Post Hold Fix | Checksum: 2455dace1
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
+Phase 6 Post Hold Fix | Checksum: 156a41051
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6714
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 0.743874 %
-  Global Horizontal Routing Utilization  = 0.859832 %
+  Global Vertical Routing Utilization    = 0.535318 %
+  Global Horizontal Routing Utilization  = 0.573174 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -1218,44 +1091,44 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 270aeac63
+Phase 7 Route finalize | Checksum: 16208a704
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6714
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1147 ; free virtual = 6295
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 270aeac63
+Phase 8 Verifying routed nets | Checksum: 16208a704
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 795 ; free virtual = 6713
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1146 ; free virtual = 6294
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 2bf36ec4c
+Phase 9 Depositing Routes | Checksum: 20fefd5c5
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 795 ; free virtual = 6712
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:23 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1145 ; free virtual = 6293
 
 Phase 10 Post Router Timing
-INFO: [Route 35-20] Post Routing Timing Summary | WNS=4.674  | TNS=0.000  | WHS=0.119  | THS=0.000  |
+INFO: [Route 35-20] Post Routing Timing Summary | WNS=4.720  | TNS=0.000  | WHS=0.121  | THS=0.000  |
 
-Phase 10 Post Router Timing | Checksum: 23de6b743
+Phase 10 Post Router Timing | Checksum: 27abe17f4
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:00:26 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 797 ; free virtual = 6715
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:24 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1149 ; free virtual = 6297
 INFO: [Route 35-61] The design met the timing requirement.
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:00:39 ; elapsed = 00:00:26 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 918 ; free virtual = 6835
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:24 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1268 ; free virtual = 6416
 
 Routing Is Done.
 INFO: [Common 17-83] Releasing license: Implementation
-15 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+14 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:27 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 918 ; free virtual = 6835
+route_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:24 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1268 ; free virtual = 6416
 # write_checkpoint -force $outputDir/post_route.dcp
 INFO: [Timing 38-480] Writing timing data to binary archive.
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00.63 ; elapsed = 00:00:00.2 . Memory (MB): peak = 3222.500 ; gain = 0.000 ; free physical = 906 ; free virtual = 6829
+Write XDEF Complete: Time (s): cpu = 00:00:00.5 ; elapsed = 00:00:00.15 . Memory (MB): peak = 3219.688 ; gain = 0.000 ; free physical = 1260 ; free virtual = 6413
 INFO: [Common 17-1381] The checkpoint '/home/builder/Lab04b/obj/post_route.dcp' has been generated.
 # report_route_status -file $outputDir/post_route_status.rpt
 # report_timing_summary -file $outputDir/post_route_timing_summary.rpt
@@ -1293,6 +1166,8 @@ WARNING: [DRC CFGBVS-1] Missing CFGBVS and CONFIG_VOLTAGE Design Properties: Nei
  #where value2 is the voltage provided to configuration bank 0
 
 Refer to the device configuration user guide for more information.
+WARNING: [DRC DPIP-1] Input pipelining: DSP mirror_m/pixel_addr_out_reg input mirror_m/pixel_addr_out_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP mirror_m/pixel_addr_out_reg input mirror_m/pixel_addr_out_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 WARNING: [DRC DPIP-1] Input pipelining: DSP rgbtoycrcb_m/cbg_reg input rgbtoycrcb_m/cbg_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 WARNING: [DRC DPIP-1] Input pipelining: DSP rgbtoycrcb_m/cbr_reg input rgbtoycrcb_m/cbr_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 WARNING: [DRC DPIP-1] Input pipelining: DSP rgbtoycrcb_m/crb_reg input rgbtoycrcb_m/crb_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
@@ -1300,13 +1175,12 @@ WARNING: [DRC DPIP-1] Input pipelining: DSP rgbtoycrcb_m/crg_reg input rgbtoycrc
 WARNING: [DRC DPIP-1] Input pipelining: DSP rgbtoycrcb_m/y10 input rgbtoycrcb_m/y10/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 WARNING: [DRC DPIP-1] Input pipelining: DSP rgbtoycrcb_m/y1_reg input rgbtoycrcb_m/y1_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 WARNING: [DRC DPIP-1] Input pipelining: DSP rgbtoycrcb_m/yb_reg input rgbtoycrcb_m/yb_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-WARNING: [DRC DPIP-1] Input pipelining: DSP rotate_m/pixel_addr_out_reg input rotate_m/pixel_addr_out_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP mirror_m/pixel_addr_out_reg multiplier stage mirror_m/pixel_addr_out_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP rgbtoycrcb_m/cbg_reg multiplier stage rgbtoycrcb_m/cbg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP rgbtoycrcb_m/cbr_reg multiplier stage rgbtoycrcb_m/cbr_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP rgbtoycrcb_m/crb_reg multiplier stage rgbtoycrcb_m/crb_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 WARNING: [DRC DPOP-2] MREG Output pipelining: DSP rgbtoycrcb_m/crg_reg multiplier stage rgbtoycrcb_m/crg_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-INFO: [Vivado 12-3199] DRC finished with 0 Errors, 14 Warnings
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 15 Warnings
 INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
 INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
 Loading data files...
@@ -1319,7 +1193,7 @@ Writing bitstream obj/out.bit...
 INFO: [Vivado 12-1842] Bitgen Completed Successfully.
 INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
 INFO: [Common 17-83] Releasing license: Implementation
-9 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+9 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
 write_bitstream completed successfully
-write_bitstream: Time (s): cpu = 00:00:21 ; elapsed = 00:00:13 . Memory (MB): peak = 3318.410 ; gain = 95.910 ; free physical = 895 ; free virtual = 6812
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 20 09:59:28 2022...
+write_bitstream: Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 3303.965 ; gain = 84.277 ; free physical = 1233 ; free virtual = 6387
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 20 21:04:17 2022...

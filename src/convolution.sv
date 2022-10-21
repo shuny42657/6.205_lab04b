@@ -74,7 +74,7 @@ module convolution #(
 	    r_conv = 0;
 	    g_conv = 0;
 	    b_conv = 0;
-	    /*for (int i = 0;i<3;i = i + 1)begin
+	    for (int i = 0;i<3;i = i + 1)begin
 		    for(int j = 0;j<3;j = j + 1)begin
 			    r_conv = r_conv + $signed(coffs[i][j])*$signed({1'b0,caches[i][j][15:11]});
 			    g_conv = g_conv + $signed(coffs[i][j])*$signed({1'b0,caches[i][j][10:5]});
